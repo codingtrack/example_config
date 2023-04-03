@@ -4,17 +4,15 @@ M.treesitter = {
   ensure_installed = {
     "vim",
     "lua",
-    "html",
-    "css",
     "javascript",
     "typescript",
-    "tsx",
     "c",
     "cpp",
     "go",
     "python",
     "markdown",
     "markdown_inline",
+    "bash",
   },
   indent = {
     enable = true,
@@ -26,6 +24,9 @@ M.treesitter = {
     enable = true,
     extended_mode = true,
   },
+  mathup = {
+    enable = true,
+  },
 }
 
 M.mason = {
@@ -36,7 +37,7 @@ M.mason = {
     "clangd",
     "prettier",
     "bash-language-server",
-    "gopls"
+    "gopls",
   },
 }
 
