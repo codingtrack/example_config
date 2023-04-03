@@ -8,6 +8,7 @@ M.general = {
     ["<leader>gg"] = { "<cmd>Neogit<CR>", "Neogit" },
     ["<leader>wv"] = { "<cmd>vsplit<CR>", "vsplit" },
     ["<leader>q"] = { "<cmd>q<CR>", "quit" },
+    ["<leader>u"] = { "<cmd>NvChadUpdate<CR>", "quit" },
   },
 }
 
