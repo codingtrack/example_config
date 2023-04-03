@@ -1,4 +1,4 @@
-local overrides = require("custom.configs.overrides")
+local overrides = require "custom.configs.overrides"
 
 ---@type NvPluginSpec[]
 local plugins = {
@@ -25,7 +25,7 @@ local plugins = {
   -- override plugin configs
   {
     "williamboman/mason.nvim",
-    opts = overrides.mason
+    opts = overrides.mason,
   },
 
   {
@@ -37,6 +37,14 @@ local plugins = {
     "nvim-tree/nvim-tree.lua",
     opts = overrides.nvimtree,
   },
+  {
+    "nvim-telescope/telescope.nvim",
+    opts = overrides.telescope,
+  },
+  {
+    "lewis6991/gitsigns.nvim",
+    opts = overrides.gitsigns,
+  },
 
   -- Install a plugin
   {
@@ -46,13 +54,95 @@ local plugins = {
       require("better_escape").setup()
     end,
   },
+  {
+    "ahmedkhalf/project.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("project_nvim").setup {
+        detection_methods = { "pattern" },
+        patterns = { ".git", ".svn", ".clang-format", "package.json" },
+      }
+    end,
+  },
+  {
+    "p00f/nvim-ts-rainbow",
+    event = "VeryLazy",
+  },
+  {
+    "TimUntersberger/neogit",
+    -- event = "BufRead",
+    event = "VeryLazy",
+    cmd = { "Neogit" },
+    dependencies = { "sindrets/diffview.nvim" },
+    config = function()
+      require("neogit").setup {
+        integrations = { diffview = true },
+      }
+    end,
+  },
+  {
+    "utilyre/barbecue.nvim",
+    name = "barbecue",
+    version = "*",
+    dependencies = {
+      "SmiteshP/nvim-navic",
+      "nvim-tree/nvim-web-devicons", -- optional dependency
+    },
+    opts = {
+      -- configurations go here
+      create_autocmd = false,
+      attach_navic = false,
+      show_basename = false,
+      show_dirname = false,
+    },
+  },
+  {
+    "glepnir/lspsaga.nvim",
+    event = "LspAttach",
+    config = function()
+      require("lspsaga").setup {}
+    end,
+    dependencies = {
+      { "nvim-tree/nvim-web-devicons" },
+      --Please make sure you install markdown and markdown_inline parser
+      { "nvim-treesitter/nvim-treesitter" },
+    },
+  },
+  {
+    "gelguy/wilder.nvim",
+    event = "VeryLazy",
+    config = function()
+      local wilder = require "wilder"
+      wilder.setup { modes = { ":", "/", "?" } }
+      wilder.set_option(
+        "renderer",
+        wilder.renderer_mux {
+          [":"] = wilder.popupmenu_renderer {
+            highlighter = wilder.basic_highlighter(),
+          },
+          ["/"] = wilder.wildmenu_renderer {
+            highlighter = wilder.basic_highlighter(),
+          },
+        }
+      )
+    end,
+  },
+  {
+    "ethanholz/nvim-lastplace",
+    config = function()
+      require("nvim-lastplace").setup {
+        lastplace_ignore_buftype = { "quickfix", "nofile", "help" },
+        lastplace_ignore_filetype = { "gitcommit", "gitrebase", "svn", "hgcommit" },
+        lastplace_open_folds = true,
+      }
+    end,
+  },
 
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
   --   enabled = false
   -- },
-
 }
 
 return plugins

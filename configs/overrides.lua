@@ -10,6 +10,9 @@ M.treesitter = {
     "typescript",
     "tsx",
     "c",
+    "cpp",
+    "go",
+    "python",
     "markdown",
     "markdown_inline",
   },
@@ -19,6 +22,10 @@ M.treesitter = {
     --   "python"
     -- },
   },
+  rainbow = {
+    enable = true,
+    extended_mode = true,
+  },
 }
 
 M.mason = {
@@ -26,13 +33,10 @@ M.mason = {
     -- lua stuff
     "lua-language-server",
     "stylua",
-
-    -- web dev stuff
-    "css-lsp",
-    "html-lsp",
-    "typescript-language-server",
-    "deno",
-    "prettier"
+    "clangd",
+    "prettier",
+    "bash-language-server",
+    "gopls"
   },
 }
 
@@ -50,6 +54,14 @@ M.nvimtree = {
       },
     },
   },
+}
+
+M.telescope = {
+  extensions_list = { "themes", "terms", "projects" },
+}
+
+M.gitsigns = {
+  current_line_blame = true,
 }
 
 return M
