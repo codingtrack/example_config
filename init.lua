@@ -25,3 +25,14 @@ autocmd({
     require("barbecue.ui").update()
   end,
 })
+
+if vim.g.neovide then
+  -- Put anything you want to happen only in Neovide here
+  vim.g.neovide_scale_factor = 1.0
+  vim.g.neovide_padding_top = 0
+  vim.g.neovide_padding_bottom = 0
+  vim.g.neovide_padding_right = 0
+  vim.g.neovide_padding_left = 0
+  vim.g.neovide_refresh_rate = 60
+  -- vim.g.neovide_input_use_logo = true -- true on macOS
+end
