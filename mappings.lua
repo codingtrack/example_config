@@ -4,8 +4,6 @@ local M = {}
 M.general = {
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
-    ["<leader>ps"] = { "<cmd>Lazy sync<CR>", "lazy sync" },
-    ["<leader>gg"] = { "<cmd>Neogit<CR>", "Neogit" },
     ["<leader>wv"] = { "<cmd>vsplit<CR>", "vsplit" },
     ["<leader>q"] = { "<cmd>q<CR>", "quit" },
     ["<leader>u"] = { "<cmd>NvChadUpdate<CR>", "quit" },
@@ -15,6 +13,27 @@ M.general = {
 M.telescope = {
   n = {
     ["<leader>fp"] = { "<cmd>Telescope projects<CR>", "open projects" },
+  },
+}
+
+M.Neogit = {
+  n = {
+    ["<leader>gg"] = { "<cmd>Neogit<CR>", "Neogit" },
+  },
+}
+
+M.diffview = {
+  n = {
+    ["<leader>D"] = { "<cmd>DiffviewClose<CR>", "DiffviewClose" },
+    ["<leader>df"] = { "<cmd>DiffviewFileHistory %<CR>", "DiffviewFileHistory" },
+  },
+}
+
+M.lazy = {
+  n = {
+    ["<leader>ps"] = { "<cmd>Lazy sync<CR>", "lazy sync" },
+    ["<leader>pi"] = { "<cmd>Lazy<CR>", "lazy info" },
+    ["<leader>pc"] = { "<cmd>Lazy check<CR>", "lazy check" },
   },
 }
 
@@ -34,6 +53,20 @@ M.lspconfig = {
 M.gitsigns = {
   n = {
     ["<leader>gb"] = { "<cmd>Telescope git_branches<CR>", "git branches" },
+  },
+}
+
+M.spectre = {
+  n = {
+    ["<leader>S"] = { "<cmd>lua require('spectre').open()<CR>", "Open spectre" },
+    ["<leader>sw"] = { "<cmd>lua require('spectre').open_visual({select_word=true})<CR>", "Search current word" },
+    ["<leader>sp"] = {
+      "<cmd>lua require('spectre').open_file_search({select_word=true})<CR>",
+      "Search on current file",
+    },
+  },
+  v = {
+    ["<leader>sw"] = { "<cmd>lua require('spectre').open_visual()<CR>", "Search current word" },
   },
 }
 

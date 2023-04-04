@@ -135,6 +135,7 @@ local plugins = {
   -- },
   {
     "ethanholz/nvim-lastplace",
+    event = "VeryLazy",
     config = function()
       require("nvim-lastplace").setup {
         lastplace_ignore_buftype = { "quickfix", "nofile", "help" },
@@ -182,6 +183,13 @@ local plugins = {
     event = "VeryLazy",
     config = function()
       vim.g.matchup_matchparen_offscreen = { method = "popup" }
+    end,
+  },
+  {
+    "windwp/nvim-spectre",
+    cmd = { "Spectre" },
+    config = function()
+      require("spectre").setup()
     end,
   },
   -- To make a plugin not be loaded
