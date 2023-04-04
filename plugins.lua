@@ -77,6 +77,8 @@ local plugins = {
     config = function()
       require("neogit").setup {
         integrations = { diffview = true },
+        disable_commit_confirmation = true,
+        disable_builtin_notifications = true,
       }
     end,
   },
