@@ -6,7 +6,7 @@ M.general = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["<leader>wv"] = { "<cmd>vsplit<CR>", "vsplit" },
     ["<leader>q"] = { "<cmd>q<CR>", "quit" },
-    ["<leader>u"] = { "<cmd>NvChadUpdate<CR>", "quit" },
+    ["<leader>u"] = { "<cmd>NvChadUpdate<CR>", "NvChadUpdate" },
   },
 }
 

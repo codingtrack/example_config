@@ -34,7 +34,7 @@ if vim.g.neovide then
   vim.g.neovide_padding_right = 0
   vim.g.neovide_padding_left = 0
   vim.g.neovide_refresh_rate = 60
-  vim.o.guifont = "JetBrainsMonoNL NF:h10" -- text below applies for VimScript
+  vim.o.guifont = "JetBrainsMonoNL NF:h11" -- text below applies for VimScript
 
   -- vim.g.neovide_input_use_logo = true -- true on macOS
 end
