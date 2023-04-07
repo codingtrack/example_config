@@ -11,6 +11,7 @@ local plugins = {
       -- format & linting
       {
         "jose-elias-alvarez/null-ls.nvim",
+        dependencies = { "jay-babu/mason-null-ls.nvim" },
         config = function()
           require "custom.configs.null-ls"
         end,
@@ -197,6 +198,13 @@ local plugins = {
     event = "VeryLazy",
     config = function()
       require("hop").setup()
+    end,
+  },
+  {
+    "lewis6991/impatient.nvim",
+    event = "VeryLazy",
+    config = function()
+      require "impatient"
     end,
   },
   -- To make a plugin not be loaded

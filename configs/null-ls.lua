@@ -4,26 +4,35 @@ if not present then
   return
 end
 
-local b = null_ls.builtins
+local mason_null_ls = require "mason-null-ls"
+local btns = null_ls.builtins
 
+-- Please set additional flags for the supported servers here
+-- Don't specify any config here if you are using the default one.
 local sources = {
-
-  -- webdev stuff
-  -- b.formatting.deno_fmt, -- choosed deno for ts/js files cuz its very fast!
-  -- b.formatting.prettier.with { filetypes = { "html", "markdown", "css" } }, -- so prettier works only on these filetypes
-
-  -- Lua
-  b.formatting.stylua,
-
-  -- cpp
-  b.formatting.clang_format,
-
-  -- sh
-  b.formatting.shfmt
-
+  btns.formatting.clang_format.with {
+    filetypes = { "c", "cpp" },
+  },
+  btns.formatting.shfmt,
+  btns.formatting.stylua,
 }
-
 null_ls.setup {
-  debug = true,
+  border = "rounded",
+  debug = false,
+  log_level = "warn",
+  update_in_insert = false,
   sources = sources,
 }
+
+local null_ls_deps = {
+    "clang_format",
+    "stylua",
+    "shfmt",
+}
+
+mason_null_ls.setup {
+  ensure_installed = null_ls_deps,
+  automatic_installation = false,
+  automatic_setup = true,
+}
+require("mason-null-ls").setup_handlers()
