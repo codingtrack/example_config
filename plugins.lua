@@ -192,6 +192,13 @@ local plugins = {
       require("spectre").setup()
     end,
   },
+  {
+    "phaazon/hop.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("hop").setup()
+    end,
+  },
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",

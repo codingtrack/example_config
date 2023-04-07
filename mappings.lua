@@ -70,6 +70,13 @@ M.spectre = {
   },
 }
 
+M.hop = {
+  n = {
+    ["<leader>gw"] = { "<cmd>HopWord<CR>", "HopWord" },
+    ["<leader>gl"] = { "<cmd>HopLine<CR>", "HopLine" },
+  },
+}
+
 -- more keybinds!
 
 return M
