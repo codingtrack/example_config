@@ -13,6 +13,7 @@ M.general = {
 M.telescope = {
   n = {
     ["<leader>fp"] = { "<cmd>Telescope projects<CR>", "open projects" },
+    ["<leader>fn"] = { "<cmd>Telescope file_browser<CR>", "file browser" },
   },
 }
 

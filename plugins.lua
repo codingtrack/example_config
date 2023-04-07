@@ -11,7 +11,7 @@ local plugins = {
       -- format & linting
       {
         "jose-elias-alvarez/null-ls.nvim",
-        dependencies = { "jay-babu/mason-null-ls.nvim" },
+        "jay-babu/mason-null-ls.nvim",
         config = function()
           require "custom.configs.null-ls"
         end,
@@ -205,6 +205,23 @@ local plugins = {
     event = "VeryLazy",
     config = function()
       require "impatient"
+    end,
+  },
+  {
+    "nvim-telescope/telescope-fzf-native.nvim",
+  },
+  {
+    "nvim-telescope/telescope-file-browser.nvim",
+  },
+  {
+    "folke/todo-comments.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("todo-comments").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
     end,
   },
   -- To make a plugin not be loaded

@@ -25,7 +25,7 @@ null_ls.setup {
 }
 
 local null_ls_deps = {
-    "clang_format",
+    -- "clang_format",
     "stylua",
     "shfmt",
 }

@@ -58,7 +58,7 @@ M.nvimtree = {
 }
 
 M.telescope = {
-  extensions_list = { "themes", "terms", "projects" },
+  extensions_list = { "themes", "terms", "projects", "fzf", "file_browser" },
 }
 
 M.gitsigns = {
