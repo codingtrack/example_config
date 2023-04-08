@@ -10,6 +10,8 @@ local autocmd = vim.api.nvim_create_autocmd
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
+vim.opt.mousemodel="extend"
+
 
 autocmd({
   "WinScrolled", -- or WinResized on NVIM-v0.9 and higher
