@@ -11,7 +11,7 @@ local plugins = {
       -- format & linting
       {
         "jose-elias-alvarez/null-ls.nvim",
-        "jay-babu/mason-null-ls.nvim",
+        dependencies = { "jay-babu/mason-null-ls.nvim" },
         config = function()
           require "custom.configs.null-ls"
         end,
@@ -155,6 +155,12 @@ local plugins = {
         lsp = {
           progress = {
             enabled = false,
+          },
+          hover = {
+            enabled = true,
+            view = "hover", -- when nil, use defaults from documentation
+            ---@type NoiceViewOptions
+            opts = {}, -- merged with defaults from documentation
           },
         },
         presets = {
