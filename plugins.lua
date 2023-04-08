@@ -146,45 +146,6 @@ local plugins = {
     end,
   },
   {
-    "folke/noice.nvim",
-    enabled = true,
-    event = "VeryLazy",
-    dependencies = { "rcarriga/nvim-notify", "muniftanjim/nui.nvim" },
-    config = function()
-      require("noice").setup {
-        lsp = {
-          progress = {
-            enabled = false,
-          },
-          hover = {
-            enabled = true,
-            view = "hover", -- when nil, use defaults from documentation
-            ---@type NoiceViewOptions
-            opts = {}, -- merged with defaults from documentation
-          },
-        },
-        presets = {
-          bottom_search = false,
-          command_palette = true,
-          long_message_to_split = true,
-          inc_rename = false,
-          lsp_doc_border = true,
-        },
-        messages = {
-          enabled = true,
-          view = "notify",
-          view_error = "notify",
-          view_warn = "notify",
-          view_history = "messages",
-          view_search = "virtualtext",
-        },
-        health = {
-          checker = false,
-        },
-      }
-    end,
-  },
-  {
     "andymass/vim-matchup",
     -- Highlight, jump between pairs like if..else
     event = "VeryLazy",
