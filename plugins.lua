@@ -11,7 +11,6 @@ local plugins = {
       -- format & linting
       {
         "jose-elias-alvarez/null-ls.nvim",
-        dependencies = { "jay-babu/mason-null-ls.nvim" },
         config = function()
           require "custom.configs.null-ls"
         end,
@@ -190,6 +189,10 @@ local plugins = {
         -- refer to the configuration section below
       }
     end,
+  },
+  {
+    "junegunn/vim-easy-align",
+    event = "VeryLazy",
   },
   -- To make a plugin not be loaded
   -- {

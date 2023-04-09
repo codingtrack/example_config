@@ -4,7 +4,6 @@ if not present then
   return
 end
 
-local mason_null_ls = require "mason-null-ls"
 local btns = null_ls.builtins
 
 -- Please set additional flags for the supported servers here
@@ -23,16 +22,3 @@ null_ls.setup {
   update_in_insert = false,
   sources = sources,
 }
-
-local null_ls_deps = {
-    -- "clang_format",
-    "stylua",
-    "shfmt",
-}
-
-mason_null_ls.setup {
-  ensure_installed = null_ls_deps,
-  automatic_installation = false,
-  automatic_setup = true,
-}
-require("mason-null-ls").setup_handlers()

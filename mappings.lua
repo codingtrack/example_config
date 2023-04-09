@@ -78,6 +78,15 @@ M.hop = {
   },
 }
 
+M.easyalign = {
+  n = {
+    ["ga"] = { "<cmd>easyalign<cr>", "easyalign" },
+  },
+  v = {
+    ["ga"] = { "<cmd>easyalign<cr>", "easyalign" },
+  },
+}
+
 -- more keybinds!
 
 return M
