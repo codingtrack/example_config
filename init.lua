@@ -10,8 +10,7 @@ local autocmd = vim.api.nvim_create_autocmd
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
-vim.opt.mousemodel="extend"
-
+vim.opt.mousemodel = "extend"
 
 autocmd({
   "WinScrolled", -- or WinResized on NVIM-v0.9 and higher
@@ -42,4 +41,5 @@ if vim.g.neovide then
   vim.g.neovide_hide_mouse_when_typing = true
   vim.g.neovide_fullscreen = true
   vim.g.neovide_input_use_logo = true -- true on macOS
+  vim.opt.mousemoveevent = true
 end
