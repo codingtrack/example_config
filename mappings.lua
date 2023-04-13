@@ -14,6 +14,7 @@ M.telescope = {
   n = {
     ["<leader>fp"] = { "<cmd>Telescope projects<CR>", "open projects" },
     ["<leader>fn"] = { "<cmd>Telescope file_browser<CR>", "file browser" },
+    ["<leader>fs"] = { "<cmd>Telescope grep_string<CR>", "search current word" },
   },
 }
 
