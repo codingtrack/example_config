@@ -39,6 +39,18 @@ local plugins = {
   },
   {
     "nvim-telescope/telescope.nvim",
+    dependencies = {
+      { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+      {
+        "ahmedkhalf/project.nvim",
+        config = function()
+          require("project_nvim").setup {
+            detection_methods = { "pattern" },
+            patterns = { ".git", ".svn", ".clang-format", "package.json" },
+          }
+        end,
+      },
+    },
     opts = overrides.telescope,
   },
   {
@@ -52,16 +64,6 @@ local plugins = {
     event = "InsertEnter",
     config = function()
       require("better_escape").setup()
-    end,
-  },
-  {
-    "ahmedkhalf/project.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("project_nvim").setup {
-        detection_methods = { "pattern" },
-        patterns = { ".git", ".svn", ".clang-format", "package.json" },
-      }
     end,
   },
   {
@@ -172,9 +174,6 @@ local plugins = {
     config = function()
       require "impatient"
     end,
-  },
-  {
-    "nvim-telescope/telescope-fzf-native.nvim",
   },
   {
     "nvim-telescope/telescope-file-browser.nvim",
