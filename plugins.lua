@@ -50,6 +50,9 @@ local plugins = {
           }
         end,
       },
+      {
+        "nvim-telescope/telescope-file-browser.nvim",
+      },
     },
     opts = overrides.telescope,
   },
@@ -174,9 +177,6 @@ local plugins = {
     config = function()
       require "impatient"
     end,
-  },
-  {
-    "nvim-telescope/telescope-file-browser.nvim",
   },
   {
     "folke/todo-comments.nvim",

@@ -7,9 +7,9 @@ local autocmd = vim.api.nvim_create_autocmd
 -- })
 --
 -- triggers CursorHold event faster
-vim.opt.shiftwidth = 4
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
+-- vim.opt.shiftwidth = 4
+-- vim.opt.tabstop = 4
+-- vim.opt.softtabstop = 4
 vim.opt.mousemodel = "extend"
 
 autocmd({
