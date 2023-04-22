@@ -99,8 +99,8 @@ local plugins = {
       -- configurations go here
       create_autocmd = false,
       attach_navic = false,
-      show_basename = false,
-      show_dirname = false,
+      -- show_basename = false,
+      -- show_dirname = false,
     },
   },
   {

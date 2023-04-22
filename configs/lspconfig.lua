@@ -1,7 +1,7 @@
--- local on_attach = require("plugins.configs.lspconfig").on_attach
-local capabilities = require("plugins.configs.lspconfig").capabilities
-
 local lspconfig = require "lspconfig"
+-- local on_attach = require("plugins.configs.lspconfig").on_attach
+local capabilities = lspconfig.capabilities
+
 local utils = require "core.utils"
 
 local on_attach = function(client, bufnr)
