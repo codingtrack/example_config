@@ -88,6 +88,13 @@ M.easyalign = {
   },
 }
 
+M.windows = {
+  n = {
+    ["<leader>wm"] = { "<cmd>WindowsMaximize<CR>", "WindowsMaximize" },
+    ["<leader>we"] = { "<cmd>WindowsEqualize<CR>", "WindowsEqualize" },
+  },
+}
+
 -- more keybinds!
 
 return M
