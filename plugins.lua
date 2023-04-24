@@ -201,34 +201,34 @@ local plugins = {
       }
     end,
   },
-  {
-    "anuvyklack/windows.nvim",
-    cmd = { "WindowsMaximize", "WindowsMaximizeVertically", "WindowsMaximizeHorizontally", "WindowsEqualize" },
-    dependencies = {
-      "anuvyklack/middleclass",
-    },
-    config = function()
-      require("windows").setup {
-        autowidth = {
-          enable = false,
-        },
-        ignore = {
-          buftype = { "quickfix" },
-          filetype = {
-            "NvimTree",
-            "neo-tree",
-            "undotree",
-            "gundo",
-            "qf",
-            "toggleterm",
-            "TelescopePrompt",
-            "alpha",
-            "netrw",
-          },
-        },
-      }
-    end,
-  },
+  -- {
+  --   "anuvyklack/windows.nvim",
+  --   cmd = { "WindowsMaximize", "WindowsMaximizeVertically", "WindowsMaximizeHorizontally", "WindowsEqualize" },
+  --   dependencies = {
+  --     "anuvyklack/middleclass",
+  --   },
+  --   config = function()
+  --     require("windows").setup {
+  --       autowidth = {
+  --         enable = false,
+  --       },
+  --       ignore = {
+  --         buftype = { "quickfix" },
+  --         filetype = {
+  --           "NvimTree",
+  --           "neo-tree",
+  --           "undotree",
+  --           "gundo",
+  --           "qf",
+  --           "toggleterm",
+  --           "TelescopePrompt",
+  --           "alpha",
+  --           "netrw",
+  --         },
+  --       },
+  --     }
+  --   end,
+  -- },
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
