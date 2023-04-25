@@ -201,6 +201,15 @@ local plugins = {
       }
     end,
   },
+  {
+    "rcarriga/nvim-notify",
+    event = "VeryLazy",
+    config = function()
+      dofile(vim.g.base46_cache .. "notify")
+      require("notify").setup();
+      vim.notify = require("notify")
+    end,
+  },
   -- {
   --   "anuvyklack/windows.nvim",
   --   cmd = { "WindowsMaximize", "WindowsMaximizeVertically", "WindowsMaximizeHorizontally", "WindowsEqualize" },
