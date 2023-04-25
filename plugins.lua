@@ -172,13 +172,6 @@ local plugins = {
     end,
   },
   {
-    "lewis6991/impatient.nvim",
-    event = "VeryLazy",
-    config = function()
-      require "impatient"
-    end,
-  },
-  {
     "folke/todo-comments.nvim",
     event = "VeryLazy",
     config = function()
@@ -206,8 +199,8 @@ local plugins = {
     event = "VeryLazy",
     config = function()
       dofile(vim.g.base46_cache .. "notify")
-      require("notify").setup();
-      vim.notify = require("notify")
+      require("notify").setup()
+      vim.notify = require "notify"
     end,
   },
   -- {
