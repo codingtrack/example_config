@@ -7,10 +7,12 @@ local plugins = {
 
   {
     "neovim/nvim-lspconfig",
+    event = { "BufAdd", "BufReadPost", "BufNewFile" },
     dependencies = {
       -- format & linting
       {
         "jose-elias-alvarez/null-ls.nvim",
+        event = { "CursorHold", "CursorHoldI" },
         config = function()
           require "custom.configs.null-ls"
         end,
@@ -30,6 +32,10 @@ local plugins = {
 
   {
     "nvim-treesitter/nvim-treesitter",
+    event = { "CursorHold", "CursorHoldI" },
+    dependencies = {
+      "p00f/nvim-ts-rainbow",
+    },
     opts = overrides.treesitter,
   },
 
@@ -43,6 +49,7 @@ local plugins = {
       { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
       {
         "ahmedkhalf/project.nvim",
+        event = "BufReadPost",
         config = function()
           require("project_nvim").setup {
             detection_methods = { "pattern" },
@@ -68,10 +75,6 @@ local plugins = {
     config = function()
       require("better_escape").setup()
     end,
-  },
-  {
-    "p00f/nvim-ts-rainbow",
-    event = "VeryLazy",
   },
   {
     "TimUntersberger/neogit",
@@ -121,7 +124,7 @@ local plugins = {
   },
   {
     "gelguy/wilder.nvim",
-    event = "VeryLazy",
+    event = "CmdlineEnter",
     config = function()
       local wilder = require "wilder"
       wilder.setup { modes = { ":", "/", "?" } }
@@ -187,7 +190,7 @@ local plugins = {
   },
   {
     "phaazon/hop.nvim",
-    event = "VeryLazy",
+    event = "BufReadPost",
     config = function()
       require("hop").setup()
     end,
