@@ -7,7 +7,6 @@ local plugins = {
 
   {
     "neovim/nvim-lspconfig",
-    event = { "BufAdd", "BufReadPost", "BufNewFile" },
     dependencies = {
       -- format & linting
       {
@@ -32,7 +31,6 @@ local plugins = {
 
   {
     "nvim-treesitter/nvim-treesitter",
-    event = { "BufAdd", "BufReadPost", "BufNewFile" },
     dependencies = {
       "p00f/nvim-ts-rainbow",
     },
@@ -49,7 +47,6 @@ local plugins = {
       { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
       {
         "ahmedkhalf/project.nvim",
-        event = "BufReadPost",
         config = function()
           require("project_nvim").setup {
             detection_methods = { "pattern" },
@@ -79,7 +76,7 @@ local plugins = {
   {
     "TimUntersberger/neogit",
     cmd = { "Neogit" },
-    dependencies = { "sindrets/diffview.nvim" },
+    dependencies = { "sindrets/diffview.nvim", event = "BufReadPost" },
     config = function()
       require("neogit").setup {
         integrations = { diffview = true },
@@ -173,7 +170,8 @@ local plugins = {
   },
   {
     "phaazon/hop.nvim",
-    event = "BufReadPost",
+    lazy = true,
+    cmd = { "HopWord", "HopLine" },
     config = function()
       require("hop").setup()
     end,
@@ -191,15 +189,8 @@ local plugins = {
   },
   {
     "junegunn/vim-easy-align",
-    event = "BufReadPost",
-  },
-  {
-    "LunarVim/bigfile.nvim",
-    config = function()
-      require("bigfile").config {
-        filesize = 1,
-      }
-    end,
+    cmd = { "EasyAlign" },
+    lazy = true,
   },
   {
     "rcarriga/nvim-notify",
