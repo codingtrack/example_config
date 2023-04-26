@@ -78,8 +78,7 @@ local plugins = {
   },
   {
     "TimUntersberger/neogit",
-    -- event = "BufRead",
-    event = "VeryLazy",
+    event = "BufReadPost",
     cmd = { "Neogit" },
     dependencies = { "sindrets/diffview.nvim" },
     config = function()
@@ -92,6 +91,7 @@ local plugins = {
   },
   {
     "utilyre/barbecue.nvim",
+    event = "BufReadPost",
     name = "barbecue",
     version = "*",
     dependencies = {
@@ -148,7 +148,7 @@ local plugins = {
   },
   {
     "ethanholz/nvim-lastplace",
-    event = "VeryLazy",
+    event = "BufReadPost",
     config = function()
       require("nvim-lastplace").setup {
         lastplace_ignore_buftype = { "quickfix", "nofile", "help" },
@@ -160,13 +160,14 @@ local plugins = {
   {
     "andymass/vim-matchup",
     -- Highlight, jump between pairs like if..else
-    event = "VeryLazy",
+    event = "BufReadPost",
     config = function()
       vim.g.matchup_matchparen_offscreen = { method = "popup" }
     end,
   },
   {
     "windwp/nvim-spectre",
+    event = "BufReadPost",
     cmd = { "Spectre" },
     config = function()
       require("spectre").setup()
@@ -181,7 +182,7 @@ local plugins = {
   },
   {
     "folke/todo-comments.nvim",
-    event = "VeryLazy",
+    event = "BufReadPost",
     config = function()
       require("todo-comments").setup {
         -- your configuration comes here
@@ -192,7 +193,7 @@ local plugins = {
   },
   {
     "junegunn/vim-easy-align",
-    event = "VeryLazy",
+    event = "BufReadPost",
   },
   {
     "LunarVim/bigfile.nvim",
