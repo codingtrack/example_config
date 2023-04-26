@@ -41,9 +41,8 @@ M.lazy = {
 
 M.lspconfig = {
   n = {
-    ["gd"] = { "<cmd>Lspsaga peek_definition<CR>", "peek definition" },
-    ["gD"] = { "<cmd>Lspsaga goto_definition<CR>", "goto definition" },
-    ["gr"] = { "<cmd>Lspsaga lsp_finder<CR>", "peek reference" },
+    ["gd"] = { "<cmd>Telescope lsp_definitions<CR>", "peek definition" },
+    ["gr"] = { "<cmd>Telescope lsp_references<CR>", "peek reference" },
     ["<leader>ls"] = { "<cmd>Telescope lsp_document_symbols<CR>", "document symbols" },
     ["<leader>lS"] = { "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>", "workspace symbols" },
     ["<leader>li"] = { "<cmd>LspInfo<CR>", "lspinfo" },
