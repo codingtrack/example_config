@@ -78,7 +78,6 @@ local plugins = {
   },
   {
     "TimUntersberger/neogit",
-    event = "BufReadPost",
     cmd = { "Neogit" },
     dependencies = { "sindrets/diffview.nvim" },
     config = function()
@@ -96,11 +95,11 @@ local plugins = {
     version = "*",
     dependencies = {
       "SmiteshP/nvim-navic",
-      "nvim-tree/nvim-web-devicons", -- optional dependency
+      -- "nvim-tree/nvim-web-devicons", -- optional dependency
     },
     opts = {
       -- configurations go here
-      create_autocmd = false,
+      -- create_autocmd = false,
       attach_navic = false,
       -- show_basename = false,
       -- show_dirname = false,
@@ -167,7 +166,6 @@ local plugins = {
   },
   {
     "windwp/nvim-spectre",
-    event = "BufReadPost",
     cmd = { "Spectre" },
     config = function()
       require("spectre").setup()

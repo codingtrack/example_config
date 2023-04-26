@@ -12,22 +12,22 @@ local autocmd = vim.api.nvim_create_autocmd
 -- vim.opt.softtabstop = 4
 vim.opt.mousemodel = "extend"
 
-autocmd({
-  "WinScrolled", -- or WinResized on NVIM-v0.9 and higher
-  "BufWinEnter",
-  "CursorHold",
-  "InsertLeave",
-
-  -- include these if you have set `show_modified` to `true`
-  "BufWritePost",
-  "TextChanged",
-  "TextChangedI",
-}, {
-  group = vim.api.nvim_create_augroup("barbecue.updater", {}),
-  callback = function()
-    require("barbecue.ui").update()
-  end,
-})
+-- autocmd({
+--   "WinScrolled", -- or WinResized on NVIM-v0.9 and higher
+--   "BufWinEnter",
+--   "CursorHold",
+--   "InsertLeave",
+--
+--   -- include these if you have set `show_modified` to `true`
+--   "BufWritePost",
+--   "TextChanged",
+--   "TextChangedI",
+-- }, {
+--   group = vim.api.nvim_create_augroup("barbecue.updater", {}),
+--   callback = function()
+--     require("barbecue.ui").update()
+--   end,
+-- })
 
 if vim.g.neovide then
   -- Put anything you want to happen only in Neovide here

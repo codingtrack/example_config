@@ -80,10 +80,10 @@ M.hop = {
 
 M.easyalign = {
   n = {
-    ["ga"] = { "<cmd>easyalign<cr>", "easyalign" },
+    ["ga"] = { "<cmd>EasyAlign<cr>", "easyalign" },
   },
   v = {
-    ["ga"] = { "<cmd>easyalign<cr>", "easyalign" },
+    ["ga"] = { "<cmd>EasyAlign<cr>", "easyalign" },
   },
 }
 
