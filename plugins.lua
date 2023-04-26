@@ -12,7 +12,7 @@ local plugins = {
       -- format & linting
       {
         "jose-elias-alvarez/null-ls.nvim",
-        event = { "CursorHold", "CursorHoldI" },
+        -- event = { "CursorHold", "CursorHoldI" },
         config = function()
           require "custom.configs.null-ls"
         end,
@@ -32,7 +32,7 @@ local plugins = {
 
   {
     "nvim-treesitter/nvim-treesitter",
-    event = { "CursorHold", "CursorHoldI" },
+    event = { "BufAdd", "BufReadPost", "BufNewFile" },
     dependencies = {
       "p00f/nvim-ts-rainbow",
     },
