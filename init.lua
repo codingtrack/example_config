@@ -15,6 +15,7 @@ vim.opt.swapfile = false
 vim.opt.fileencoding = "utf-8"
 vim.opt.backup = false
 vim.opt.smartindent = false
+vim.opt.updatetime = 100
 
 -- autocmd({
 --   "WinScrolled", -- or WinResized on NVIM-v0.9 and higher

@@ -24,9 +24,6 @@ M.treesitter = {
     enable = true,
     extended_mode = true,
   },
-  mathup = {
-    enable = true,
-  },
 }
 
 M.mason = {

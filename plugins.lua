@@ -154,14 +154,6 @@ local plugins = {
     end,
   },
   {
-    "andymass/vim-matchup",
-    -- Highlight, jump between pairs like if..else
-    event = "BufReadPost",
-    config = function()
-      vim.g.matchup_matchparen_offscreen = { method = "popup" }
-    end,
-  },
-  {
     "windwp/nvim-spectre",
     cmd = { "Spectre" },
     config = function()
@@ -201,39 +193,6 @@ local plugins = {
       vim.notify = require "notify"
     end,
   },
-  -- {
-  --   "anuvyklack/windows.nvim",
-  --   cmd = { "WindowsMaximize", "WindowsMaximizeVertically", "WindowsMaximizeHorizontally", "WindowsEqualize" },
-  --   dependencies = {
-  --     "anuvyklack/middleclass",
-  --   },
-  --   config = function()
-  --     require("windows").setup {
-  --       autowidth = {
-  --         enable = false,
-  --       },
-  --       ignore = {
-  --         buftype = { "quickfix" },
-  --         filetype = {
-  --           "NvimTree",
-  --           "neo-tree",
-  --           "undotree",
-  --           "gundo",
-  --           "qf",
-  --           "toggleterm",
-  --           "TelescopePrompt",
-  --           "alpha",
-  --           "netrw",
-  --         },
-  --       },
-  --     }
-  --   end,
-  -- },
-  -- To make a plugin not be loaded
-  -- {
-  --   "NvChad/nvim-colorizer.lua",
-  --   enabled = false
-  -- },
 }
 
 return plugins
