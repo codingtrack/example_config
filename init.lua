@@ -1,4 +1,4 @@
-local autocmd = vim.api.nvim_create_autocmd
+-- local autocmd = vim.api.nvim_create_autocmd
 
 -- Auto resize panes when resizing nvim window
 -- autocmd("VimResized", {
@@ -7,10 +7,14 @@ local autocmd = vim.api.nvim_create_autocmd
 -- })
 --
 -- triggers CursorHold event faster
--- vim.opt.shiftwidth = 4
--- vim.opt.tabstop = 4
--- vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
 vim.opt.mousemodel = "extend"
+vim.opt.swapfile = false
+vim.opt.fileencoding = "utf-8"
+vim.opt.backup = false
+vim.opt.smartindent = false
 
 -- autocmd({
 --   "WinScrolled", -- or WinResized on NVIM-v0.9 and higher
