@@ -47,6 +47,7 @@ local plugins = {
       { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
       {
         "ahmedkhalf/project.nvim",
+        event = "VimEnter",
         config = function()
           require("project_nvim").setup {
             detection_methods = { "pattern" },
