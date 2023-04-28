@@ -93,7 +93,7 @@ local plugins = {
   },
   {
     "utilyre/barbecue.nvim",
-    event = "BufReadPost",
+    event = "LspAttach",
     name = "barbecue",
     version = "*",
     dependencies = {
@@ -252,6 +252,33 @@ local plugins = {
     lazy = true,
     ft = "markdown",
     build = ":call mkdp#util#install()",
+  },
+  {
+    "stevearc/aerial.nvim",
+    event = "LspAttach",
+    opts = {
+      attach_mode = "global",
+      backends = { "lsp", "treesitter", "markdown", "man" },
+      layout = { min_width = 28 },
+      show_guides = true,
+      filter_kind = false,
+      guides = {
+        mid_item = "├ ",
+        last_item = "└ ",
+        nested_top = "│ ",
+        whitespace = "  ",
+      },
+      keymaps = {
+        ["[y"] = "actions.prev",
+        ["]y"] = "actions.next",
+        ["[Y"] = "actions.prev_up",
+        ["]Y"] = "actions.next_up",
+        ["{"] = false,
+        ["}"] = false,
+        ["[["] = false,
+        ["]]"] = false,
+      },
+    },
   },
 }
 

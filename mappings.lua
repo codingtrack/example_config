@@ -2,11 +2,11 @@
 local M = {}
 
 M.disabled = {
-    n = {
-        ["<C-c>"] = "",
-        ["<leader>cm"] = "",
-        ["<leader>f"] = "",
-    }
+  n = {
+    ["<C-c>"] = "",
+    ["<leader>cm"] = "",
+    ["<leader>f"] = "",
+  },
 }
 
 M.general = {
@@ -55,7 +55,17 @@ M.lspconfig = {
   n = {
     ["gd"] = { "<cmd>Telescope lsp_definitions<CR>", "peek definition" },
     ["gr"] = { "<cmd>Telescope lsp_references<CR>", "peek reference" },
-    ["<leader>ls"] = { "<cmd>Telescope lsp_document_symbols<CR>", "document symbols" },
+    ["<leader>ls"] = {
+      function()
+        local aerial_avail, _ = pcall(require, "aerial")
+        if aerial_avail then
+          require("telescope").extensions.aerial.aerial()
+        else
+          require("telescope.builtin").lsp_document_symbols()
+        end
+      end,
+      "document symbols",
+    },
     ["<leader>lS"] = { "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>", "workspace symbols" },
     ["<leader>li"] = { "<cmd>LspInfo<CR>", "lspinfo" },
     ["<leader>ld"] = { "<cmd>Telescope diagnostics<CR>", "diagnostics" },
