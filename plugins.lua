@@ -51,7 +51,7 @@ local plugins = {
         config = function()
           require("project_nvim").setup {
             detection_methods = { "pattern" },
-            patterns = { ".git", ".svn", ".clang-format", "package.json" },
+            patterns = { ".git", ".svn", ".clang-format", "package.json", ".hgtags" },
           }
         end,
       },
@@ -228,6 +228,18 @@ local plugins = {
           cmp,
         },
       }
+    end,
+  },
+  {
+    "michaelb/sniprun",
+    build = "bash install.sh",
+    cmd = { "SnipRun" },
+  },
+  {
+    "karb94/neoscroll.nvim",
+    event = "BufReadPost",
+    config = function()
+      require("neoscroll").setup()
     end,
   },
 }
