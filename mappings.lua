@@ -5,6 +5,7 @@ M.disabled = {
     n = {
         ["<C-c>"] = "",
         ["<leader>cm"] = "",
+        ["<leader>f"] = "",
     }
 }
 
@@ -58,6 +59,12 @@ M.lspconfig = {
     ["<leader>lS"] = { "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>", "workspace symbols" },
     ["<leader>li"] = { "<cmd>LspInfo<CR>", "lspinfo" },
     ["<leader>ld"] = { "<cmd>Telescope diagnostics<CR>", "diagnostics" },
+    ["<leader>lf"] = {
+      function()
+        vim.diagnostic.open_float { border = "rounded" }
+      end,
+      "floating diagnostic",
+    },
   },
 }
 
