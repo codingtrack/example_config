@@ -13,9 +13,21 @@ vim.opt.softtabstop = 4
 vim.opt.mousemodel = "extend"
 vim.opt.swapfile = false
 vim.opt.fileencoding = "utf-8"
-vim.opt.backup = false
-vim.opt.smartindent = false
+vim.opt.writebackup = false
+-- vim.opt.smartindent = false
 vim.opt.updatetime = 100
+vim.opt.breakindent = true -- Wrap indent to match  line start
+vim.opt.completeopt = { "menuone", "noselect" }
+vim.opt.viewoptions:remove "curdir" -- disable saving current directory with views
+vim.opt.shortmess:append { s = true, I = true } -- disable startup message
+vim.opt.backspace:append { "nostop" } -- Don't stop backspace at insert
+vim.opt.preserveindent = true
+
+if vim.fn.has "nvim-0.9" == 1 then
+  vim.opt.diffopt:append "linematch:60" -- enable linematch diff algorithm
+end
+
+
 
 -- autocmd({
 --   "WinScrolled", -- or WinResized on NVIM-v0.9 and higher
