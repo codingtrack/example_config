@@ -18,9 +18,11 @@ M.general = {
 
 M.telescope = {
   n = {
-    ["<leader>fp"] = { "<cmd>Telescope projects<CR>", "open projects" },
+    ["<leader>fp"] = { "<cmd>Telescope projects<CR>", "find projects" },
     ["<leader>fn"] = { "<cmd>Telescope file_browser<CR>", "file browser" },
     ["<leader>fs"] = { "<cmd>Telescope grep_string<CR>", "search current word" },
+    ["<leader>fr"] = { "<cmd>Telescope frecency<CR>", "find frecency" },
+    ["<leader>fw"] = { "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", "live grep" },
     -- git
     ["<leader>gb"] = { "<cmd>Telescope git_branches<CR>", "git branches" },
     ["<leader>gm"] = { "<cmd> Telescope git_commits <CR>", "git commits" },

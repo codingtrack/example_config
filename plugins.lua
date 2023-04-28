@@ -58,6 +58,11 @@ local plugins = {
       {
         "nvim-telescope/telescope-file-browser.nvim",
       },
+      {
+        "nvim-telescope/telescope-frecency.nvim",
+        dependencies = { "kkharji/sqlite.lua" },
+      },
+      { "nvim-telescope/telescope-live-grep-args.nvim" },
     },
     opts = overrides.telescope,
   },
