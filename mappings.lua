@@ -26,7 +26,7 @@ M.Neogit = {
 
 M.diffview = {
   n = {
-    ["<leader>D"] = { "<cmd>DiffviewClose<CR>", "DiffviewClose" },
+    ["<leader>dd"] = { "<cmd>DiffviewClose<CR>", "DiffviewClose" },
     ["<leader>df"] = { "<cmd>DiffviewFileHistory %<CR>", "DiffviewFileHistory" },
   },
 }
@@ -80,19 +80,18 @@ M.hop = {
 
 M.easyalign = {
   n = {
-    ["ga"] = { "<cmd>EasyAlign<cr>", "easyalign" },
+    ["ga"] = { "<cmd>EasyAlign<CR>", "easyalign" },
   },
   v = {
-    ["ga"] = { "<cmd>EasyAlign<cr>", "easyalign" },
+    ["ga"] = { "<cmd>EasyAlign<CR>", "easyalign" },
   },
 }
 
--- M.windows = {
---   n = {
---     ["<leader>wm"] = { "<cmd>WindowsMaximize<CR>", "WindowsMaximize" },
---     ["<leader>we"] = { "<cmd>WindowsEqualize<CR>", "WindowsEqualize" },
---   },
--- }
+M.markdown = {
+  n = {
+    ["<leader>m"] = { "<cmd>MarkdownPreviewToggle<CR>", "MarkdownPreviewToggle" },
+  },
+}
 
 -- more keybinds!
 
