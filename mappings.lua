@@ -15,6 +15,7 @@ M.telescope = {
     ["<leader>fp"] = { "<cmd>Telescope projects<CR>", "open projects" },
     ["<leader>fn"] = { "<cmd>Telescope file_browser<CR>", "file browser" },
     ["<leader>fs"] = { "<cmd>Telescope grep_string<CR>", "search current word" },
+    ["<leader>gb"] = { "<cmd>Telescope git_branches<CR>", "git branches" },
   },
 }
 
@@ -47,19 +48,12 @@ M.lspconfig = {
     ["<leader>lS"] = { "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>", "workspace symbols" },
     ["<leader>li"] = { "<cmd>LspInfo<CR>", "lspinfo" },
     ["<leader>ld"] = { "<cmd>Telescope diagnostics<CR>", "diagnostics" },
-    ["<leader>ca"] = { "<cmd>Lspsaga code_action<CR>", "code actions" },
-  },
-}
-
-M.gitsigns = {
-  n = {
-    ["<leader>gb"] = { "<cmd>Telescope git_branches<CR>", "git branches" },
   },
 }
 
 M.spectre = {
   n = {
-    ["<leader>S"] = { "<cmd>lua require('spectre').open()<CR>", "Open spectre" },
+    ["<leader>ss"] = { "<cmd>lua require('spectre').open()<CR>", "Open spectre" },
     ["<leader>sw"] = { "<cmd>lua require('spectre').open_visual({select_word=true})<CR>", "Search current word" },
     ["<leader>sp"] = {
       "<cmd>lua require('spectre').open_file_search({select_word=true})<CR>",
@@ -73,8 +67,8 @@ M.spectre = {
 
 M.hop = {
   n = {
-    ["<leader>gw"] = { "<cmd>HopWord<CR>", "HopWord" },
-    ["<leader>gl"] = { "<cmd>HopLine<CR>", "HopLine" },
+    ["<leader>hw"] = { "<cmd>HopWord<CR>", "HopWord" },
+    ["<leader>hl"] = { "<cmd>HopLine<CR>", "HopLine" },
   },
 }
 
