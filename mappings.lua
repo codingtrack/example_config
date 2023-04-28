@@ -1,10 +1,16 @@
 ---@type MappingsTable
 local M = {}
 
+M.disabled = {
+    n = {
+        ["<C-c>"] = "",
+        ["<leader>cm"] = "",
+    }
+}
+
 M.general = {
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
-    ["<leader>wv"] = { "<cmd>vsplit<CR>", "vsplit" },
     ["<leader>q"] = { "<cmd>q<CR>", "quit" },
     ["<leader>u"] = { "<cmd>NvChadUpdate<CR>", "NvChadUpdate" },
   },
@@ -15,7 +21,9 @@ M.telescope = {
     ["<leader>fp"] = { "<cmd>Telescope projects<CR>", "open projects" },
     ["<leader>fn"] = { "<cmd>Telescope file_browser<CR>", "file browser" },
     ["<leader>fs"] = { "<cmd>Telescope grep_string<CR>", "search current word" },
+    -- git
     ["<leader>gb"] = { "<cmd>Telescope git_branches<CR>", "git branches" },
+    ["<leader>gm"] = { "<cmd> Telescope git_commits <CR>", "git commits" },
   },
 }
 
