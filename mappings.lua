@@ -11,22 +11,22 @@ M.disabled = {
 
 M.general = {
   n = {
-    [";"] = { ":", "enter command mode", opts = { nowait = true } },
-    ["<leader>q"] = { "<cmd>q<CR>", "quit" },
+    [";"] = { ":", "Enter Command Mode", opts = { nowait = true } },
+    ["<leader>q"] = { "<cmd>q<CR>", "Quit" },
     ["<leader>u"] = { "<cmd>NvChadUpdate<CR>", "NvChadUpdate" },
   },
 }
 
 M.telescope = {
   n = {
-    ["<leader>fp"] = { "<cmd>Telescope projects<CR>", "find projects" },
-    ["<leader>fn"] = { "<cmd>Telescope file_browser<CR>", "file browser" },
-    ["<leader>fs"] = { "<cmd>Telescope grep_string<CR>", "search current word" },
-    ["<leader>fr"] = { "<cmd>Telescope frecency<CR>", "find frecency" },
-    ["<leader>fw"] = { "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", "live grep" },
+    ["<leader>fp"] = { "<cmd>Telescope projects<CR>", "Find projects" },
+    ["<leader>fn"] = { "<cmd>Telescope file_browser<CR>", "File browser" },
+    ["<leader>fs"] = { "<cmd>Telescope grep_string<CR>", "Telescope grep_string" },
+    ["<leader>fr"] = { "<cmd>Telescope frecency<CR>", "Find frecency" },
+    ["<leader>fw"] = { "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", "Live grep" },
     -- git
-    ["<leader>gb"] = { "<cmd>Telescope git_branches<CR>", "git branches" },
-    ["<leader>gm"] = { "<cmd> Telescope git_commits <CR>", "git commits" },
+    ["<leader>gb"] = { "<cmd>Telescope git_branches<CR>", "Git branches" },
+    ["<leader>gm"] = { "<cmd> Telescope git_commits <CR>", "Git commits" },
   },
 }
 
@@ -45,16 +45,16 @@ M.diffview = {
 
 M.lazy = {
   n = {
-    ["<leader>ps"] = { "<cmd>Lazy sync<CR>", "lazy sync" },
-    ["<leader>pi"] = { "<cmd>Lazy<CR>", "lazy info" },
-    ["<leader>pc"] = { "<cmd>Lazy check<CR>", "lazy check" },
+    ["<leader>ps"] = { "<cmd>Lazy sync<CR>", "Lazy sync" },
+    ["<leader>pi"] = { "<cmd>Lazy<CR>", "Lazy info" },
+    ["<leader>pc"] = { "<cmd>Lazy check<CR>", "Lazy check" },
   },
 }
 
 M.lspconfig = {
   n = {
-    ["gd"] = { "<cmd>Telescope lsp_definitions<CR>", "peek definition" },
-    ["gr"] = { "<cmd>Telescope lsp_references<CR>", "peek reference" },
+    ["gd"] = { "<cmd>Telescope lsp_definitions<CR>", "Goto definition" },
+    ["gr"] = { "<cmd>Telescope lsp_references<CR>", "Goto reference" },
     ["<leader>ls"] = {
       function()
         local aerial_avail, _ = pcall(require, "aerial")
@@ -64,16 +64,16 @@ M.lspconfig = {
           require("telescope.builtin").lsp_document_symbols()
         end
       end,
-      "document symbols",
+      "Document symbols",
     },
-    ["<leader>lS"] = { "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>", "workspace symbols" },
-    ["<leader>li"] = { "<cmd>LspInfo<CR>", "lspinfo" },
-    ["<leader>ld"] = { "<cmd>Telescope diagnostics<CR>", "diagnostics" },
+    ["<leader>lS"] = { "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>", "Workspace symbols" },
+    ["<leader>li"] = { "<cmd>LspInfo<CR>", "Lspinfo" },
+    ["<leader>ld"] = { "<cmd>Telescope diagnostics<CR>", "Diagnostics" },
     ["<leader>lf"] = {
       function()
         vim.diagnostic.open_float { border = "rounded" }
       end,
-      "floating diagnostic",
+      "Floating diagnostic",
     },
   },
 }
@@ -101,10 +101,10 @@ M.hop = {
 
 M.easyalign = {
   n = {
-    ["ga"] = { "<cmd>EasyAlign<CR>", "easyalign" },
+    ["ga"] = { "<cmd>EasyAlign<CR>", "EasyAlign" },
   },
   v = {
-    ["ga"] = { "<cmd>EasyAlign<CR>", "easyalign" },
+    ["ga"] = { "<cmd>EasyAlign<CR>", "EasyAlign" },
   },
 }
 

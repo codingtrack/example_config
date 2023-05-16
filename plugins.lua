@@ -278,6 +278,7 @@ local plugins = {
         ["[["] = false,
         ["]]"] = false,
       },
+      disable_max_lines = 100000000,
     },
   },
 }
