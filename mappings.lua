@@ -133,6 +133,12 @@ M.tabufline = {
   },
 }
 
+M.outline = {
+  n = {
+    ["<leader>o"] = { "<cmd>SymbolsOutline<CR>", "SymbolsOutline" },
+  },
+}
+
 -- more keybinds!
 
 return M
