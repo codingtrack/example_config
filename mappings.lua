@@ -77,6 +77,7 @@ M.lspconfig = {
       end,
       "Floating diagnostic",
     },
+    ["<leader>ca"] = { "<cmd>CodeActionMenu<CR>", "LSP code action" },
   },
 }
 

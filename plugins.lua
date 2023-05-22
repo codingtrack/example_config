@@ -360,11 +360,10 @@ local plugins = {
       require("symbols-outline").setup(opts)
     end,
   },
-  -- {
-  --   "nvim-zh/colorful-winsep.nvim",
-  --   config = true,
-  --   event = { "WinNew" },
-  -- },
+  {
+    "weilbith/nvim-code-action-menu",
+    cmd = "CodeActionMenu",
+  },
 }
 
 return plugins
