@@ -6,6 +6,7 @@ M.disabled = {
     ["<C-c>"] = "",
     ["<leader>cm"] = "",
     ["<leader>f"] = "",
+    ["<leader>x"] = "",
   },
 }
 
@@ -21,7 +22,7 @@ M.telescope = {
   n = {
     ["<leader>fp"] = { "<cmd>Telescope projects<CR>", "Find projects" },
     ["<leader>fn"] = { "<cmd>Telescope file_browser<CR>", "File browser" },
-    ["<leader>fs"] = { "<cmd>Telescope grep_string<CR>", "Telescope grep_string" },
+    ["<leader>fs"] = { "<cmd>Telescope grep_string<CR>", "Find word" },
     ["<leader>fr"] = { "<cmd>Telescope frecency<CR>", "Find frecency" },
     ["<leader>fw"] = { "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", "Live grep" },
     -- git
@@ -38,7 +39,8 @@ M.Neogit = {
 
 M.diffview = {
   n = {
-    ["<leader>dd"] = { "<cmd>DiffviewClose<CR>", "DiffviewClose" },
+    ["<leader>do"] = { "<cmd>DiffviewOpen<CR>", "DiffviewOpen" },
+    ["<leader>dc"] = { "<cmd>DiffviewClose<CR>", "DiffviewClose" },
     ["<leader>df"] = { "<cmd>DiffviewFileHistory %<CR>", "DiffviewFileHistory" },
   },
 }
@@ -111,6 +113,23 @@ M.easyalign = {
 M.markdown = {
   n = {
     ["<leader>m"] = { "<cmd>MarkdownPreviewToggle<CR>", "MarkdownPreviewToggle" },
+  },
+}
+
+M.tabufline = {
+  n = {
+    ["<leader>xc"] = {
+      function()
+        require("nvchad_ui.tabufline").close_buffer()
+      end,
+      "Close current buffer",
+    },
+    ["<leader>xa"] = {
+      function()
+        require("nvchad_ui.tabufline").closeOtherBufs()
+      end,
+      "Close other buffer",
+    },
   },
 }
 

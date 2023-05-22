@@ -281,6 +281,10 @@ local plugins = {
       disable_max_lines = 100000000,
     },
   },
+  {
+    "jghauser/mkdir.nvim",
+    event = "BufNewFile",
+  },
 }
 
 return plugins
