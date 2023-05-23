@@ -7,6 +7,7 @@ M.disabled = {
     ["<leader>cm"] = "",
     ["<leader>f"] = "",
     ["<leader>x"] = "",
+    ["<leader>ma"] = "",
   },
 }
 
@@ -28,6 +29,7 @@ M.telescope = {
     -- git
     ["<leader>gb"] = { "<cmd>Telescope git_branches<CR>", "Git branches" },
     ["<leader>gm"] = { "<cmd> Telescope git_commits <CR>", "Git commits" },
+    ["<leader>fm"] = { "<cmd> Telescope marks <CR>", "Telescope bookmarks" },
   },
 }
 
@@ -163,6 +165,12 @@ M.refactoring = {
   },
   n = {
     ["<leader>rr"] = { "<cmd>lua require('telescope').extensions.refactoring.refactors()<CR>", "Refactoring" },
+  },
+}
+
+M.mason = {
+  n = {
+    ["<leader>mm"] = { "<cmd>Mason<CR>", "Mason" },
   },
 }
 
