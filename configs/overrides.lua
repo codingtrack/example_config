@@ -67,7 +67,7 @@ M.telescope = {
       hidden = true,
     },
   },
-  extensions_list = { "themes", "terms", "projects", "fzf", "file_browser", "frecency", "aerial" },
+  extensions_list = { "themes", "terms", "projects", "fzf", "file_browser", "frecency", "aerial", "harpoon" },
 }
 
 M.gitsigns = {
