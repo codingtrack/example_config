@@ -157,4 +157,13 @@ M.persistence = {
   },
 }
 
+M.refactoring = {
+  v = {
+    ["<leader>rr"] = { "<cmd>lua require('telescope').extensions.refactoring.refactors()<CR>", "Refactoring" },
+  },
+  n = {
+    ["<leader>rr"] = { "<cmd>lua require('telescope').extensions.refactoring.refactors()<CR>", "Refactoring" },
+  },
+}
+
 return M

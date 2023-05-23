@@ -19,7 +19,7 @@ local on_attach = function(client, bufnr)
 end
 
 -- if you just want default config for the servers then put them in a table
-local servers = { "bashls", "gopls" }
+local servers = { "bashls", "gopls", "marksman" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {

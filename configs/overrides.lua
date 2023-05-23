@@ -36,6 +36,7 @@ M.mason = {
     "bash-language-server",
     "gopls",
     "shfmt",
+    "marksman",
   },
 }
 
@@ -67,7 +68,17 @@ M.telescope = {
       hidden = true,
     },
   },
-  extensions_list = { "themes", "terms", "projects", "fzf", "file_browser", "frecency", "aerial", "harpoon" },
+  extensions_list = {
+    "themes",
+    "terms",
+    "projects",
+    "fzf",
+    "file_browser",
+    "frecency",
+    "aerial",
+    "harpoon",
+    "refactoring",
+  },
 }
 
 M.gitsigns = {

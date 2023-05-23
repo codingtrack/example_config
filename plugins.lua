@@ -325,10 +325,13 @@ local plugins = {
     },
   },
   {
-    "ibhagwan/smartyank.nvim",
-    event = { "BufReadPost" },
+    "ThePrimeagen/refactoring.nvim",
+    dependencies = {
+      { "nvim-lua/plenary.nvim" },
+      { "nvim-treesitter/nvim-treesitter" },
+    },
     config = function()
-      require("smartyank").setup()
+      require("refactoring").setup {}
     end,
   },
 }
