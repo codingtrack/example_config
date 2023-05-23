@@ -134,9 +134,9 @@ M.tabufline = {
   },
 }
 
-M.outline = {
+M.Aerial = {
   n = {
-    ["<leader>o"] = { "<cmd>SymbolsOutline<CR>", "SymbolsOutline" },
+    ["<leader>o"] = { "<cmd>AerialToggle<CR>", "SymbolsOutline" },
   },
 }
 
