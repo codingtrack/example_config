@@ -8,6 +8,7 @@ M.disabled = {
     ["<leader>f"] = "",
     ["<leader>x"] = "",
     ["<leader>ma"] = "",
+    ["<leader>h"] = "",
   },
 }
 
@@ -29,7 +30,7 @@ M.telescope = {
     -- git
     ["<leader>gb"] = { "<cmd>Telescope git_branches<CR>", "Git branches" },
     ["<leader>gm"] = { "<cmd> Telescope git_commits <CR>", "Git commits" },
-    ["<leader>fm"] = { "<cmd> Telescope marks <CR>", "Telescope bookmarks" },
+    ["<leader>tm"] = { "<cmd> Telescope marks <CR>", "Telescope bookmarks" },
   },
 }
 
