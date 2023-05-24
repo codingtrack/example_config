@@ -15,6 +15,7 @@ local sources = {
   btns.formatting.shfmt,
   btns.formatting.stylua,
   btns.formatting.prettier,
+  btns.formatting.yamlfmt,
 }
 null_ls.setup {
   border = "rounded",

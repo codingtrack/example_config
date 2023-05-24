@@ -19,12 +19,13 @@ local on_attach = function(client, bufnr)
 end
 
 -- if you just want default config for the servers then put them in a table
-local servers = { "bashls", "gopls", "marksman" }
+local servers = { "bashls", "gopls", "marksman", "yamlls", "cmake" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
     capabilities = capabilities,
+    single_file_support = true,
   }
 end
 
