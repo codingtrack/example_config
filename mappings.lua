@@ -172,6 +172,8 @@ M.refactoring = {
 M.mason = {
   n = {
     ["<leader>mm"] = { "<cmd>Mason<CR>", "Mason" },
+    ["<leader>ma"] = { "<cmd>MasonInstallAll<CR>", "MasonInstallAll" },
+    ["<leader>mu"] = { "<cmd>MasonUpdata<CR>", "MasonUpdata" },
   },
 }
 
