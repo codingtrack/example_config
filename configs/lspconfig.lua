@@ -37,6 +37,7 @@ lspconfig.clangd.setup {
   cmd = {
     "clangd",
     "--clang-tidy",
+    "--background-index",
     "--completion-style=detailed",
     "--fallback-style=LLVM",
     "--function-arg-placeholders=false",
