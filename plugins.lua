@@ -57,9 +57,6 @@ local plugins = {
         end,
       },
       {
-        "nvim-telescope/telescope-file-browser.nvim",
-      },
-      {
         "nvim-telescope/telescope-frecency.nvim",
         dependencies = { "kkharji/sqlite.lua" },
       },
@@ -333,6 +330,13 @@ local plugins = {
     },
     config = function()
       require("refactoring").setup {}
+    end,
+  },
+  {
+    "is0n/fm-nvim",
+    event = "VeryLazy",
+    config = function()
+      require("fm-nvim").setup {}
     end,
   },
 }

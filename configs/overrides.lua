@@ -64,16 +64,12 @@ M.telescope = {
       case_mode = "smart_case", -- or "ignore_case" or "respect_case"
       -- the default case_mode is "smart_case"
     },
-    file_browser = {
-      hidden = true,
-    },
   },
   extensions_list = {
     "themes",
     "terms",
     "projects",
     "fzf",
-    "file_browser",
     "frecency",
     "aerial",
     "harpoon",
