@@ -23,7 +23,6 @@ M.general = {
 M.telescope = {
   n = {
     ["<leader>fp"] = { "<cmd>Telescope projects<CR>", "Find projects" },
-    ["<leader>fn"] = { "<cmd>Telescope file_browser<CR>", "File browser" },
     ["<leader>fs"] = { "<cmd>Telescope grep_string<CR>", "Find word" },
     ["<leader>fr"] = { "<cmd>Telescope frecency<CR>", "Find frecency" },
     ["<leader>fw"] = { "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", "Live grep" },
@@ -174,6 +173,12 @@ M.mason = {
     ["<leader>mm"] = { "<cmd>Mason<CR>", "Mason" },
     ["<leader>ma"] = { "<cmd>MasonInstallAll<CR>", "MasonInstallAll" },
     ["<leader>mu"] = { "<cmd>MasonUpdata<CR>", "MasonUpdata" },
+  },
+}
+
+M.fmnvim = {
+  n = {
+    ["<leader>j"] = { "<cmd>Joshuto<CR>", "Joshuto" },
   },
 }
 
