@@ -115,7 +115,7 @@ M.easyalign = {
 
 M.markdown = {
   n = {
-    ["<leader>m"] = { "<cmd>MarkdownPreviewToggle<CR>", "MarkdownPreviewToggle" },
+    ["<leader>md"] = { "<cmd>MarkdownPreviewToggle<CR>", "MarkdownPreviewToggle" },
   },
 }
 
