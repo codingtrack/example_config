@@ -14,8 +14,9 @@ local sources = {
   },
   btns.formatting.shfmt,
   btns.formatting.stylua,
-  btns.formatting.prettier,
-  btns.formatting.yamlfmt,
+  btns.formatting.prettier.with {
+    filetypes = { "html", "json", "yaml", "markdown" },
+  },
   btns.formatting.gofumpt,
 }
 null_ls.setup {

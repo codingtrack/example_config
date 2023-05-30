@@ -19,7 +19,7 @@ local on_attach = function(client, bufnr)
 end
 
 -- if you just want default config for the servers then put them in a table
-local servers = { "bashls", "gopls", "marksman", "yamlls", "cmake" }
+local servers = { "bashls", "gopls", "marksman", "yamlls", "pyright" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -49,4 +49,21 @@ lspconfig.clangd.setup {
     "--query-driver=/usr/bin/g++",
   },
   single_file_support = true,
+}
+
+lspconfig.jsonls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = {
+    "jsonnet-language-server",
+  },
+}
+
+lspconfig.cmake.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = {
+    "neocmakelsp",
+    "--stdio",
+  },
 }
