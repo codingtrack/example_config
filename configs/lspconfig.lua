@@ -31,6 +31,16 @@ end
 
 capabilities.offsetEncoding = { "utf-16" }
 
+local root_files = {
+  ".clangd",
+  ".clang-tidy",
+  ".clang-format",
+  ".git",
+  -- 'compile_commands.json',
+  -- 'compile_flags.txt',
+  -- 'configure.ac', -- AutoTools
+}
+
 lspconfig.clangd.setup {
   on_attach = on_attach,
   capabilities = capabilities,
@@ -48,6 +58,9 @@ lspconfig.clangd.setup {
     "--malloc-trim",
     "--query-driver=/usr/bin/g++",
   },
+  root_dir = function(fname)
+    return lspconfig.util.root_pattern(unpack(root_files))(fname) or lspconfig.util.find_git_ancestor(fname)
+  end,
   single_file_support = true,
 }
 
