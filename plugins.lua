@@ -342,6 +342,10 @@ local plugins = {
       require("fm-nvim").setup {}
     end,
   },
+  {
+    "mg979/vim-visual-multi",
+    event = "BufReadPost",
+  },
 }
 
 return plugins
