@@ -336,7 +336,7 @@ local plugins = {
     end,
   },
   {
-    "is0n/fm-nvim",
+    "codingtrack/fm-nvim",
     cmd = { "Joshuto" },
     config = function()
       require("fm-nvim").setup {}

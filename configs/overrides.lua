@@ -37,6 +37,7 @@ M.mason = {
     "gopls",
     "shfmt",
     "marksman",
+    "jsonnet-language-server",
   },
 }
 
