@@ -334,7 +334,7 @@ local plugins = {
   },
   {
     "is0n/fm-nvim",
-    event = "VeryLazy",
+    cmd = { "Joshuto" },
     config = function()
       require("fm-nvim").setup {}
     end,
