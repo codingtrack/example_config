@@ -74,6 +74,7 @@ M.telescope = {
     "aerial",
     "harpoon",
     "refactoring",
+    "zoxide",
   },
 }
 

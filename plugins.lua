@@ -61,6 +61,9 @@ local plugins = {
         dependencies = { "kkharji/sqlite.lua" },
       },
       { "nvim-telescope/telescope-live-grep-args.nvim" },
+      {
+        "jvgrootveld/telescope-zoxide",
+      },
     },
     opts = overrides.telescope,
   },

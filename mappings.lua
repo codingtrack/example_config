@@ -26,6 +26,7 @@ M.telescope = {
     ["<leader>fs"] = { "<cmd>Telescope grep_string<CR>", "Find word" },
     ["<leader>fr"] = { "<cmd>Telescope frecency<CR>", "Find frecency" },
     ["<leader>fw"] = { "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", "Live grep" },
+    ["<leader>fz"] = { "<cmd>Telescope zoxide list<CR>", "Zoxide list" },
     -- git
     ["<leader>gb"] = { "<cmd>Telescope git_branches<CR>", "Git branches" },
     ["<leader>gm"] = { "<cmd> Telescope git_commits <CR>", "Git commits" },
