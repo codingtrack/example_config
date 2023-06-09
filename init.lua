@@ -22,12 +22,12 @@ vim.opt.viewoptions:remove "curdir" -- disable saving current directory with vie
 vim.opt.shortmess:append { s = true, I = true } -- disable startup message
 vim.opt.backspace:append { "nostop" } -- Don't stop backspace at insert
 vim.opt.preserveindent = true
+vim.opt.list = true
+vim.opt.listchars = { tab = ">->" }
 
 if vim.fn.has "nvim-0.9" == 1 then
   vim.opt.diffopt:append "linematch:60" -- enable linematch diff algorithm
 end
-
-
 
 -- autocmd({
 --   "WinScrolled", -- or WinResized on NVIM-v0.9 and higher
@@ -47,8 +47,8 @@ end
 -- })
 --
 autocmd("BufEnter", {
-    pattern = "*",
-    command = "silent! :lcd%:p:h",
+  pattern = "*",
+  command = "silent! :lcd%:p:h",
 })
 
 if vim.g.neovide then
@@ -64,9 +64,9 @@ if vim.g.neovide then
   vim.g.neovide_fullscreen = false
   vim.g.neovide_input_use_logo = true -- true on macOS
   vim.opt.mousemoveevent = true
-  vim.keymap.set('v', '<C-S-c>', '"+y') -- Copy
-  vim.keymap.set('n', '<C-S-v>', '"+P') -- Paste normal mode
-  vim.keymap.set('v', '<C-S-v>', '"+P') -- Paste visual mode
-  vim.keymap.set('c', '<C-S-v>', '<C-R>+') -- Paste command mode
-  vim.keymap.set('i', '<C-S-v>', '<ESC>l"+Pli') -- Paste insert mode
+  vim.keymap.set("v", "<C-S-c>", '"+y') -- Copy
+  vim.keymap.set("n", "<C-S-v>", '"+P') -- Paste normal mode
+  vim.keymap.set("v", "<C-S-v>", '"+P') -- Paste visual mode
+  vim.keymap.set("c", "<C-S-v>", "<C-R>+") -- Paste command mode
+  vim.keymap.set("i", "<C-S-v>", '<ESC>l"+Pli') -- Paste insert mode
 end

@@ -42,6 +42,11 @@ local plugins = {
     opts = overrides.nvimtree,
   },
   {
+    "lukas-reineke/indent-blankline.nvim",
+    opts = overrides.blankline,
+  },
+
+  {
     "nvim-telescope/telescope.nvim",
     branch = "master",
     dependencies = {

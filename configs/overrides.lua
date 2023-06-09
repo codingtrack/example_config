@@ -89,4 +89,10 @@ M.gitsigns = {
   current_line_blame = true,
 }
 
+M.blankline = {
+  show_trailing_blankline_indent = true,
+  show_first_indent_level = true,
+  space_char_blankline = " ",
+}
+
 return M
