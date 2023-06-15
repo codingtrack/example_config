@@ -183,4 +183,10 @@ M.fmnvim = {
   },
 }
 
+M.wilder = {
+  n = {
+    ["<leader>tw"] = { "<cmd>lua require('wilder').toggle()<CR>", "Toggle wilder" },
+  },
+}
+
 return M
