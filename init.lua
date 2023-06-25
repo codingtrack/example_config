@@ -23,7 +23,7 @@ vim.opt.shortmess:append { s = true, I = true } -- disable startup message
 vim.opt.backspace:append { "nostop" } -- Don't stop backspace at insert
 -- vim.opt.preserveindent = true
 vim.opt.list = true
-vim.opt.listchars = { tab = ">->" }
+vim.opt.listchars = { tab = ">->", --[[ eol = "$", ]] trail = "·", extends = ">", precedes = "<" }
 
 if vim.fn.has "nvim-0.9" == 1 then
   vim.opt.diffopt:append "linematch:60" -- enable linematch diff algorithm
