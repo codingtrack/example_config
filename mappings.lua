@@ -143,32 +143,6 @@ M.Aerial = {
   },
 }
 
-M.Harpoon = {
-  n = {
-    ["<leader>of"] = { "<cmd>lua require('harpoon.mark').add_file()<CR>", "Add File" },
-    ["<leader>ot"] = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", "Toggle Menu" },
-    ["<leader>on"] = { "<cmd>lua require('harpoon.ui').nav_next()<CR>", "Next" },
-    ["<leader>op"] = { "<cmd>lua require('harpoon.ui').nav_prev()<CR>", "Prev" },
-    ["<leader>oh"] = { "<cmd>Telescope harpoon marks<CR>", "Telescope Harpoon" },
-    ["<leader>od"] = { "<cmd>lua require('harpoon.mark').rm_file()<CR>", "Remove File" },
-  },
-}
-
-M.persistence = {
-  n = {
-    ["<leader>a"] = { "<cmd>lua require('persistence').load()<CR>", "Restore last session" },
-  },
-}
-
-M.refactoring = {
-  v = {
-    ["<leader>rr"] = { "<cmd>lua require('telescope').extensions.refactoring.refactors()<CR>", "Refactoring" },
-  },
-  n = {
-    ["<leader>rr"] = { "<cmd>lua require('telescope').extensions.refactoring.refactors()<CR>", "Refactoring" },
-  },
-}
-
 M.mason = {
   n = {
     ["<leader>mm"] = { "<cmd>Mason<CR>", "Mason" },

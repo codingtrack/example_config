@@ -85,8 +85,6 @@ M.telescope = {
     "fzf",
     "frecency",
     "aerial",
-    "harpoon",
-    "refactoring",
     "zoxide",
   },
 }

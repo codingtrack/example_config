@@ -277,11 +277,6 @@ local plugins = {
     end,
   },
   {
-    "michaelb/sniprun",
-    build = "bash install.sh",
-    cmd = { "SnipRun" },
-  },
-  {
     "karb94/neoscroll.nvim",
     event = "BufReadPost",
     config = function()
@@ -342,33 +337,6 @@ local plugins = {
       require("nvim-surround").setup {
         -- Configuration here, or leave empty to use defaults
       }
-    end,
-  },
-  {
-    "ThePrimeagen/harpoon",
-    cmd = "Telescope harpoon marks",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
-    config = function()
-      require("harpoon").setup {}
-    end,
-  },
-  {
-    "folke/persistence.nvim",
-    event = "BufReadPre", -- this will only start session saving when an actual file was opened
-    opts = {
-      -- add any custom options here
-    },
-  },
-  {
-    "ThePrimeagen/refactoring.nvim",
-    dependencies = {
-      { "nvim-lua/plenary.nvim" },
-      { "nvim-treesitter/nvim-treesitter" },
-    },
-    config = function()
-      require("refactoring").setup {}
     end,
   },
 }
