@@ -22,7 +22,12 @@ M.treesitter = {
   },
   rainbow = {
     enable = true,
-    extended_mode = true,
+    -- list of languages you want to disable the plugin for
+    disable = { "jsx" },
+    -- Which query to use for finding delimiters
+    query = "rainbow-parens",
+    -- Highlight the entire buffer all at once
+    -- strategy = require("ts-rainbow").strategy.global,
   },
 }
 
@@ -43,7 +48,8 @@ M.mason = {
     "prettier",
     "shfmt",
     "stylua",
-    "gofumt",
+    "gofumpt",
+    "clang-format",
   },
 }
 

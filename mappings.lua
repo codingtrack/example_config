@@ -177,12 +177,6 @@ M.mason = {
   },
 }
 
-M.fmnvim = {
-  n = {
-    ["<leader>j"] = { "<cmd>Joshuto<CR>", "Joshuto" },
-  },
-}
-
 M.wilder = {
   n = {
     ["<leader>tw"] = { "<cmd>lua require('wilder').toggle()<CR>", "Toggle wilder" },

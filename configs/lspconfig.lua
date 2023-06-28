@@ -47,16 +47,15 @@ lspconfig.clangd.setup {
   cmd = {
     "clangd",
     "--clang-tidy",
+    "--enable-config",
     "--background-index",
-    "--completion-style=detailed",
-    "--fallback-style=LLVM",
+    "--completion-style=bundled",
     "--function-arg-placeholders=false",
     "--header-insertion-decorators",
     "--header-insertion=never",
-    "--pch-storage=memory",
-    "--pretty",
     "--malloc-trim",
-    "--query-driver=/usr/bin/g++",
+    "--pch-storage=disk",
+    "-j=12"
   },
   root_dir = function(fname)
 ---@diagnostic disable-next-line: deprecated

@@ -7,16 +7,6 @@ local plugins = {
 
   {
     "neovim/nvim-lspconfig",
-    dependencies = {
-      -- format & linting
-      {
-        "jose-elias-alvarez/null-ls.nvim",
-        -- event = { "CursorHold", "CursorHoldI" },
-        config = function()
-          require "custom.configs.null-ls"
-        end,
-      },
-    },
     config = function()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
@@ -31,9 +21,6 @@ local plugins = {
 
   {
     "nvim-treesitter/nvim-treesitter",
-    dependencies = {
-      "p00f/nvim-ts-rainbow",
-    },
     opts = overrides.treesitter,
   },
 
@@ -51,16 +38,6 @@ local plugins = {
     branch = "master",
     dependencies = {
       { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-      {
-        "ahmedkhalf/project.nvim",
-        event = "VimEnter",
-        config = function()
-          require("project_nvim").setup {
-            detection_methods = { "pattern" },
-            patterns = { ".git", ".svn", ".clang-format", "package.json", ".hgtags" },
-          }
-        end,
-      },
       {
         "nvim-telescope/telescope-frecency.nvim",
         dependencies = { "kkharji/sqlite.lua" },
@@ -82,6 +59,28 @@ local plugins = {
   },
 
   -- Install a plugin
+  -- format & linting
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    event = { "CursorHold", "CursorHoldI" },
+    config = function()
+      require "custom.configs.null-ls"
+    end,
+  },
+  {
+    "HiPhish/nvim-ts-rainbow2",
+    event = "BufReadPost",
+  },
+  {
+    "ahmedkhalf/project.nvim",
+    event = "VimEnter",
+    config = function()
+      require("project_nvim").setup {
+        detection_methods = { "pattern" },
+        patterns = { ".git", ".svn", ".clang-format", "package.json", ".hgtags" },
+      }
+    end,
+  },
   {
     "max397574/better-escape.nvim",
     event = "InsertEnter",
@@ -92,7 +91,15 @@ local plugins = {
   {
     "TimUntersberger/neogit",
     cmd = { "Neogit" },
-    dependencies = { "sindrets/diffview.nvim", cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewFileHistory" } },
+    dependencies = {
+      "sindrets/diffview.nvim",
+      cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewFileHistory" },
+      config = function()
+        require("diffview").setup {
+          enhanced_diff_hl = true,
+        }
+      end,
+    },
     config = function()
       require("neogit").setup {
         integrations = { diffview = true },
@@ -362,13 +369,6 @@ local plugins = {
     },
     config = function()
       require("refactoring").setup {}
-    end,
-  },
-  {
-    "codingtrack/fm-nvim",
-    cmd = { "Joshuto" },
-    config = function()
-      require("fm-nvim").setup {}
     end,
   },
 }
