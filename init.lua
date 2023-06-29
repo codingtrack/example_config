@@ -21,6 +21,8 @@ vim.opt.completeopt = { "menuone", "noselect" }
 vim.opt.viewoptions:remove "curdir" -- disable saving current directory with views
 vim.opt.shortmess:append { s = true, I = true } -- disable startup message
 vim.opt.backspace:append { "nostop" } -- Don't stop backspace at insert
+vim.wo.wrap = true
+vim.wo.linebreak = true
 -- vim.opt.preserveindent = true
 vim.opt.list = true
 vim.opt.listchars = { tab = ">->", --[[ eol = "$", ]] trail = "·", extends = ">", precedes = "<" }

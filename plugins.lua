@@ -68,10 +68,6 @@ local plugins = {
     end,
   },
   {
-    "HiPhish/nvim-ts-rainbow2",
-    event = "BufReadPost",
-  },
-  {
     "ahmedkhalf/project.nvim",
     event = "VimEnter",
     config = function()
@@ -337,6 +333,18 @@ local plugins = {
       require("nvim-surround").setup {
         -- Configuration here, or leave empty to use defaults
       }
+    end,
+  },
+  {
+    "utilyre/sentiment.nvim",
+    version = "*",
+    event = "VeryLazy", -- keep for lazy loading
+    opts = {
+      -- config
+    },
+    init = function()
+      -- `matchparen.vim` needs to be disabled manually in case of lazy loading
+      vim.g.loaded_matchparen = 1
     end,
   },
 }
