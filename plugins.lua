@@ -104,23 +104,23 @@ local plugins = {
       }
     end,
   },
-  {
-    "utilyre/barbecue.nvim",
-    event = "LspAttach",
-    name = "barbecue",
-    version = "*",
-    dependencies = {
-      "SmiteshP/nvim-navic",
-      -- "nvim-tree/nvim-web-devicons", -- optional dependency
-    },
-    opts = {
-      -- configurations go here
-      -- create_autocmd = false,
-      attach_navic = false,
-      -- show_basename = false,
-      -- show_dirname = false,
-    },
-  },
+  -- {
+  --   "utilyre/barbecue.nvim",
+  --   event = "LspAttach",
+  --   name = "barbecue",
+  --   version = "*",
+  --   dependencies = {
+  --     "SmiteshP/nvim-navic",
+  --     -- "nvim-tree/nvim-web-devicons", -- optional dependency
+  --   },
+  --   opts = {
+  --     -- configurations go here
+  --     -- create_autocmd = false,
+  --     attach_navic = false,
+  --     -- show_basename = false,
+  --     -- show_dirname = false,
+  --   },
+  -- },
   {
     "gelguy/wilder.nvim",
     event = "CmdlineEnter",
@@ -345,6 +345,13 @@ local plugins = {
     init = function()
       -- `matchparen.vim` needs to be disabled manually in case of lazy loading
       vim.g.loaded_matchparen = 1
+    end,
+  },
+  {
+    "Bekaboo/dropbar.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("dropbar").setup {}
     end,
   },
 }
