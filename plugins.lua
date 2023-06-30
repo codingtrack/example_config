@@ -283,7 +283,7 @@ local plugins = {
     "iamcco/markdown-preview.nvim",
     lazy = true,
     ft = "markdown",
-    build = ":call mkdp#util#install()",
+    build = "cd app && npm install",
   },
   {
     "stevearc/aerial.nvim",
