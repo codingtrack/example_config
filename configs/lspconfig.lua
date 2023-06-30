@@ -54,6 +54,7 @@ lspconfig.clangd.setup {
     "--header-insertion-decorators",
     "--header-insertion=never",
     "--malloc-trim",
+    "--ranking-model=heuristics",
     "--pch-storage=disk",
     "-j=12"
   },
