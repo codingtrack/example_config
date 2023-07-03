@@ -85,7 +85,7 @@ local plugins = {
     end,
   },
   {
-    "TimUntersberger/neogit",
+    "NeogitOrg/neogit",
     cmd = { "Neogit" },
     dependencies = {
       "sindrets/diffview.nvim",
@@ -104,23 +104,6 @@ local plugins = {
       }
     end,
   },
-  -- {
-  --   "utilyre/barbecue.nvim",
-  --   event = "LspAttach",
-  --   name = "barbecue",
-  --   version = "*",
-  --   dependencies = {
-  --     "SmiteshP/nvim-navic",
-  --     -- "nvim-tree/nvim-web-devicons", -- optional dependency
-  --   },
-  --   opts = {
-  --     -- configurations go here
-  --     -- create_autocmd = false,
-  --     attach_navic = false,
-  --     -- show_basename = false,
-  --     -- show_dirname = false,
-  --   },
-  -- },
   {
     "gelguy/wilder.nvim",
     event = "CmdlineEnter",
