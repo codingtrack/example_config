@@ -20,6 +20,10 @@ M.treesitter = {
     --   "python"
     -- },
   },
+  rainbow = {
+    enable = true,
+    query = 'rainbow-parens',
+  },
 }
 
 M.mason = {
