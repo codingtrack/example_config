@@ -338,11 +338,6 @@ local plugins = {
     end,
   },
   {
-    "HiPhish/nvim-ts-rainbow2",
-    event = "VeryLazy",
-  },
-  -- Lua
-  {
     "abecodes/tabout.nvim",
     event = { "VeryLazy" },
     config = function()
