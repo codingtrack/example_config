@@ -365,6 +365,19 @@ local plugins = {
     wants = { "nvim-treesitter" }, -- or require if not used so far
     after = { "nvim-cmp" }, -- if a completion plugin is using tabs load it before
   },
+  {
+    "kelly-lin/ranger.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("ranger-nvim").setup { replace_netrw = true, enable_cmds = true }
+      vim.api.nvim_set_keymap("n", "<leader>ef", "", {
+        noremap = true,
+        callback = function()
+          require("ranger-nvim").open(true)
+        end,
+      })
+    end,
+  },
 }
 
 return plugins

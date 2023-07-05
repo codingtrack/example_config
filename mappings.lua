@@ -157,4 +157,10 @@ M.wilder = {
   },
 }
 
+M.ranger = {
+  n = {
+    ["<leader>fe"] = { "<cmd>Ranger<CR>", "Ragner" },
+  },
+}
+
 return M
