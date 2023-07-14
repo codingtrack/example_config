@@ -95,6 +95,10 @@ M.spectre = {
   },
   v = {
     ["<leader>sw"] = { "<cmd>lua require('spectre').open_visual()<CR>", "Search current word" },
+    ["<leader>sp"] = {
+      "<cmd>lua require('spectre').open_file_search()<CR>",
+      "Search on current file",
+    },
   },
 }
 
