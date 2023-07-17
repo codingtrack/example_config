@@ -30,7 +30,7 @@ M.override = {
     fg = "NONE",
   },
   DiffChange = {
-    bg = "NONE",
+    bg = "#4C566A",
     fg = "NONE",
   },
   DiffModified = {
