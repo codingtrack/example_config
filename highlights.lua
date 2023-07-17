@@ -10,19 +10,40 @@ M.override = {
     italic = true,
   },
   DiffAdd = {
-    bg = "one_bg3",
+    bg = "#005f00",
+    fg = "NONE",
+  },
+  DiffAdded = {
+    bg = "#005f00",
+    fg = "NONE",
   },
   DiffText = {
-    bg = "one_bg3",
-    fg = "green",
+    bg = "#4C566A",
+    fg = "NONE",
   },
   DiffDelete = {
-    bg = "grey",
-    fg = "red",
+    bg = "#5f0000",
+    fg = "NONE",
+  },
+  DiffRemoved = {
+    bg = "#5f0000",
+    fg = "NONE",
+  },
+  DiffChange = {
+    bg = "NONE",
+    fg = "NONE",
+  },
+  DiffModified = {
+    bg = "#4C566A",
+    fg = "NONE",
   },
   DiffChangeDelete = {
-    bg = "grey",
-    fg = "red",
+    bg = "#5f0000",
+    fg = "NONE",
+  },
+  diffNewFile = {
+    bg = "#005f00",
+    fg = "NONE",
   },
 }
 
