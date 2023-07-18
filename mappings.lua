@@ -15,7 +15,7 @@ M.disabled = {
 M.general = {
   n = {
     [";"] = { ":", "Enter Command Mode", opts = { nowait = true } },
-    ["<leader>q"] = { "<cmd>q<CR>", "Quit" },
+    ["q"] = { "<cmd>q<CR>", "Quit" },
     ["<leader>u"] = { "<cmd>NvChadUpdate<CR>", "NvChadUpdate" },
   },
 }
