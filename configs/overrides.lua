@@ -33,7 +33,7 @@ M.mason = {
     "jsonnet-language-server",
     "neocmakelsp",
     "yaml-language-server",
-    "pyright",
+    "python-lsp-server",
 
     -- format
     "prettier",

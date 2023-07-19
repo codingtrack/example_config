@@ -41,10 +41,10 @@ lspconfig.clangd.setup {
     "--malloc-trim",
     "--ranking-model=heuristics",
     "--pch-storage=disk",
-    "-j=12"
+    "-j=12",
   },
   root_dir = function(fname)
----@diagnostic disable-next-line: deprecated
+    ---@diagnostic disable-next-line: deprecated
     return lspconfig.util.root_pattern(unpack(root_files))(fname) or lspconfig.util.find_git_ancestor(fname)
   end,
   single_file_support = true,
@@ -65,4 +65,10 @@ lspconfig.cmake.setup {
     "neocmakelsp",
     "--stdio",
   },
+}
+
+lspconfig.pyright.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = { "pylsp" },
 }
