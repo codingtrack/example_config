@@ -44,6 +44,51 @@ M.mason = {
   },
 }
 
+-- cmp
+local compare = require "cmp.config.compare"
+compare.lsp_scores = function(entry1, entry2)
+  local diff
+  if entry1.completion_item.score and entry2.completion_item.score then
+    diff = (entry2.completion_item.score * entry2.score) - (entry1.completion_item.score * entry1.score)
+  else
+    diff = entry2.score - entry1.score
+  end
+  return (diff < 0)
+end
+local cmp = require "cmp"
+
+M.cmp = {
+  preselect = cmp.PreselectMode.Item,
+  sorting = {
+    priority_weight = 2,
+    comparators = {
+      compare.offset, -- Items closer to cursor will have lower priority
+      compare.exact,
+      -- compare.scopes,
+      compare.lsp_scores,
+      compare.sort_text,
+      compare.score,
+      compare.recently_used,
+      -- compare.locality, -- Items closer to cursor will have higher priority, conflicts with `offset`
+      compare.kind,
+      compare.length,
+      compare.order,
+    },
+  },
+  matching = {
+    disallow_partial_fuzzy_matching = false,
+  },
+  performance = {
+    async_budget = 1,
+    max_view_entries = 150,
+  },
+  experimental = {
+    ghost_text = {
+      hl_group = "Whitespace",
+    },
+  },
+}
+
 -- git support in nvimtree
 M.nvimtree = {
   git = {

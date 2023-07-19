@@ -7,6 +7,7 @@ local plugins = {
 
   {
     "neovim/nvim-lspconfig",
+    event = { "CursorHold", "CursorHoldI" },
     config = function()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
@@ -20,7 +21,21 @@ local plugins = {
   },
 
   {
+    "hrsh7th/nvim-cmp",
+    opts = overrides.cmp,
+  },
+
+  {
     "nvim-treesitter/nvim-treesitter",
+    event = { "BufReadPost" },
+    dependencies = {
+      {
+        "hiphish/rainbow-delimiters.nvim",
+        config = function()
+          require "custom.configs.rainbow_delimiters"
+        end,
+      },
+    },
     opts = overrides.treesitter,
   },
 
@@ -257,7 +272,7 @@ local plugins = {
   },
   {
     "karb94/neoscroll.nvim",
-    event = "BufReadPost",
+    event = { "CursorHold", "CursorHoldI" },
     config = function()
       require("neoscroll").setup()
     end,
