@@ -28,14 +28,14 @@ local plugins = {
   {
     "nvim-treesitter/nvim-treesitter",
     event = { "BufReadPost" },
-    dependencies = {
-      {
-        "hiphish/rainbow-delimiters.nvim",
-        config = function()
-          require "custom.configs.rainbow_delimiters"
-        end,
-      },
-    },
+    -- dependencies = {
+    --   {
+    --     "hiphish/rainbow-delimiters.nvim",
+    --     config = function()
+    --       require "custom.configs.rainbow_delimiters"
+    --     end,
+    --   },
+    -- },
     opts = overrides.treesitter,
   },
 
