@@ -40,8 +40,8 @@ lspconfig.clangd.setup {
     "--header-insertion=never",
     "--malloc-trim",
     "--ranking-model=heuristics",
-    "--pch-storage=disk",
-    "-j=12",
+    "--pch-storage=memory",
+    "-j=8",
   },
   root_dir = function(fname)
     ---@diagnostic disable-next-line: deprecated
