@@ -41,7 +41,7 @@ M.override = {
     bg = "#5f0000",
     fg = "NONE",
   },
-  diffNewFile = {
+  DiffNewFile = {
     bg = "#005f00",
     fg = "NONE",
   },
