@@ -33,6 +33,7 @@ M.telescope = {
       end,
       "Find files",
     },
+    ["<leader>fc"] = { "<cmd>Telescope registers<CR>", "Find registers" },
     -- git
     ["<leader>gb"] = { "<cmd>Telescope git_branches<CR>", "Git branches" },
     ["<leader>gm"] = { "<cmd> Telescope git_commits <CR>", "Git commits" },
