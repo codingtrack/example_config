@@ -27,7 +27,12 @@ M.telescope = {
     ["<leader>fr"] = { "<cmd>Telescope frecency<CR>", "Find frecency" },
     ["<leader>fw"] = { "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", "Live grep" },
     ["<leader>fz"] = { "<cmd>Telescope zoxide list<CR>", "Zoxide list" },
-    ["<leader>fg"] = { "<cmd>Telescope git_files<CR>", "Find git files"},
+    ["<leader>ff"] = {
+      function()
+        require("custom.configs.telescope").find_project_files { previewer = false }
+      end,
+      "Find files",
+    },
     -- git
     ["<leader>gb"] = { "<cmd>Telescope git_branches<CR>", "Git branches" },
     ["<leader>gm"] = { "<cmd> Telescope git_commits <CR>", "Git commits" },

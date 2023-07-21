@@ -133,6 +133,7 @@ M.blankline = {
   show_trailing_blankline_indent = true,
   show_first_indent_level = true,
   space_char_blankline = " ",
+  use_treesitter = true,
 }
 
 return M
