@@ -174,4 +174,13 @@ M.ranger = {
   },
 }
 
+M.persisted = {
+  n = {
+    ["<leader>Ss"] = { "<cmd>SessionSave<CR>", "SessionSave" },
+    ["<leader>Sr"] = { "<cmd>SessionLoad<CR>", "SessionLoad" },
+    ["<leader>Sl"] = { "<cmd>SessionLoadLast<CR>", "SessionLoadLast" },
+    ["<leader>Sd"] = { "<cmd>SessionDelete<CR>", "SessionDelete" },
+  },
+}
+
 return M
