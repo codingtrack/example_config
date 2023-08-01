@@ -25,7 +25,12 @@ vim.wo.wrap = true
 vim.wo.linebreak = true
 -- vim.opt.preserveindent = true
 vim.opt.list = true
-vim.opt.listchars = { tab = ">->", --[[ eol = "$", ]] trail = "·", extends = ">", precedes = "<" }
+vim.opt.listchars = {
+  tab = ">->", --[[ eol = "$", ]]
+  trail = "·",
+  extends = ">",
+  precedes = "<",
+}
 vim.opt.relativenumber = true
 
 if vim.fn.has "nvim-0.9" == 1 then
@@ -53,6 +58,8 @@ autocmd("BufEnter", {
   pattern = "*",
   command = "silent! :lcd%:p:h",
 })
+
+vim.g.VM_maps = { ["Find Under"] = "<C-p>" }
 
 if vim.g.neovide then
   -- Put anything you want to happen only in Neovide here

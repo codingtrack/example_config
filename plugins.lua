@@ -21,13 +21,7 @@ local plugins = {
   },
 
   {
-    "hrsh7th/nvim-cmp",
-    opts = overrides.cmp,
-  },
-
-  {
     "nvim-treesitter/nvim-treesitter",
-    event = { "BufReadPost" },
     -- dependencies = {
     --   {
     --     "hiphish/rainbow-delimiters.nvim",
@@ -122,57 +116,7 @@ local plugins = {
   {
     "gelguy/wilder.nvim",
     event = "CmdlineEnter",
-    config = function()
-      local wilder = require "wilder"
-      wilder.setup { modes = { ":", "/", "?" } }
-
-      local popupmenu_renderer = wilder.popupmenu_renderer(wilder.popupmenu_border_theme {
-        border = "rounded",
-        empty_message = wilder.popupmenu_empty_message_with_spinner(),
-        highlighter = wilder.basic_highlighter(),
-        left = {
-          " ",
-          wilder.popupmenu_devicons(),
-          wilder.popupmenu_buffer_flags {
-            flags = " a + ",
-            icons = { ["+"] = "", a = "", h = "" },
-          },
-        },
-        right = {
-          " ",
-          wilder.popupmenu_scrollbar(),
-        },
-      })
-
-      local wildmenu_renderer = wilder.wildmenu_renderer {
-        highlighter = wilder.basic_highlighter(),
-        separator = " · ",
-      }
-
-      wilder.set_option(
-        "renderer",
-        wilder.renderer_mux {
-          [":"] = popupmenu_renderer,
-          ["/"] = wildmenu_renderer,
-          substitute = wildmenu_renderer,
-        }
-      )
-      wilder.set_option("pipeline", {
-        wilder.branch(wilder.cmdline_pipeline(), wilder.search_pipeline()),
-      })
-      -- wilder.set_option(
-      --   "renderer",
-      --   wilder.popupmenu_renderer(wilder.popupmenu_palette_theme {
-      --     -- 'single', 'double', 'rounded' or 'solid'
-      --     -- can also be a list of 8 characters, see :h wilder#popupmenu_palette_theme() for more details
-      --     border = "rounded",
-      --     max_height = "75%", -- max height of the palette
-      --     min_height = 0, -- set to the same as 'max_height' for a fixed height window
-      --     prompt_position = "top", -- 'top' or 'bottom' to set the location of the prompt
-      --     reverse = 0, -- set to 1 to reverse the order of the list, use in combination with 'prompt_position'
-      --   })
-      -- )
-    end,
+    config = require "custom.configs.wilder",
   },
   {
     "ethanholz/nvim-lastplace",
@@ -204,11 +148,7 @@ local plugins = {
     "folke/todo-comments.nvim",
     event = "BufReadPost",
     config = function()
-      require("todo-comments").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      }
+      require("todo-comments").setup {}
     end,
   },
   {
@@ -228,51 +168,11 @@ local plugins = {
   {
     "LunarVim/bigfile.nvim",
     event = { "BufReadPost", "BufReadPre", "BufRead" },
-    config = function()
-      local ftdetect = {
-        name = "ftdetect",
-        opts = { defer = true },
-        disable = function()
-          vim.api.nvim_set_option_value("filetype", "big_file_disabled_ft", { scope = "local" })
-        end,
-      }
-
-      local cmp = {
-        name = "nvim-cmp",
-        opts = { defer = true },
-        disable = function()
-          require("cmp").setup.buffer { enabled = false }
-        end,
-      }
-
-      local wilder = {
-        name = "wilder",
-        opts = { defer = true },
-        disable = function()
-          require("wilder").disable()
-        end,
-      }
-
-      require("bigfile").config {
-        filesize = 1, -- size of the file in MiB
-        pattern = { "*" }, -- autocmd pattern
-        features = { -- features to disable
-          "indent_blankline",
-          "lsp",
-          "illuminate",
-          "treesitter",
-          "syntax",
-          "vimopts",
-          ftdetect,
-          cmp,
-          wilder,
-        },
-      }
-    end,
+    config = require "custom.configs.bigfile",
   },
   {
     "karb94/neoscroll.nvim",
-    event = { "CursorHold", "CursorHoldI" },
+    event = { "VeryLazy" },
     config = function()
       require("neoscroll").setup()
     end,
@@ -286,30 +186,7 @@ local plugins = {
   {
     "stevearc/aerial.nvim",
     event = "LspAttach",
-    opts = {
-      attach_mode = "global",
-      backends = { "lsp", "treesitter", "markdown", "man" },
-      layout = { min_width = 28 },
-      show_guides = true,
-      filter_kind = false,
-      guides = {
-        mid_item = "├ ",
-        last_item = "└ ",
-        nested_top = "│ ",
-        whitespace = "  ",
-      },
-      keymaps = {
-        ["[y"] = "actions.prev",
-        ["]y"] = "actions.next",
-        ["[Y"] = "actions.prev_up",
-        ["]Y"] = "actions.next_up",
-        ["{"] = false,
-        ["}"] = false,
-        ["[["] = false,
-        ["]]"] = false,
-      },
-      disable_max_lines = 100000000,
-    },
+    opts = require "custom.configs.aerial",
   },
   {
     "jghauser/mkdir.nvim",
@@ -328,15 +205,13 @@ local plugins = {
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
     keys = { "ys", "cs", "ds" },
     config = function()
-      require("nvim-surround").setup {
-        -- Configuration here, or leave empty to use defaults
-      }
+      require("nvim-surround").setup {}
     end,
   },
   {
     "utilyre/sentiment.nvim",
     version = "*",
-    event = "VeryLazy", -- keep for lazy loading
+    keys = { "%" },
     opts = {
       -- config
     },
@@ -347,50 +222,21 @@ local plugins = {
   },
   {
     "Bekaboo/dropbar.nvim",
-    event = "VeryLazy",
+    event = "LspAttach",
     config = function()
       require("dropbar").setup {}
     end,
   },
   {
     "abecodes/tabout.nvim",
-    event = { "VeryLazy" },
-    config = function()
-      require("tabout").setup {
-        tabkey = "<Tab>", -- key to trigger tabout, set to an empty string to disable
-        backwards_tabkey = "<S-Tab>", -- key to trigger backwards tabout, set to an empty string to disable
-        act_as_tab = true, -- shift content if tab out is not possible
-        act_as_shift_tab = false, -- reverse shift content if tab out is not possible (if your keyboard/terminal supports <S-Tab>)
-        default_tab = "<C-t>", -- shift default action (only at the beginning of a line, otherwise <TAB> is used)
-        default_shift_tab = "<C-d>", -- reverse shift default action,
-        enable_backwards = true, -- well ...
-        completion = true, -- if the tabkey is used in a completion pum
-        tabouts = {
-          { open = "'", close = "'" },
-          { open = '"', close = '"' },
-          { open = "`", close = "`" },
-          { open = "(", close = ")" },
-          { open = "[", close = "]" },
-          { open = "{", close = "}" },
-        },
-        ignore_beginning = true, --[[ if the cursor is at the beginning of a filled element it will rather tab out than shift the content ]]
-        exclude = {}, -- tabout will ignore these filetypes
-      }
-    end,
-    wants = { "nvim-treesitter" }, -- or require if not used so far
-    after = { "nvim-cmp" }, -- if a completion plugin is using tabs load it before
+    event = { "InsertEnter" },
+    config = require "custom.configs.tabout",
   },
   {
     "kelly-lin/ranger.nvim",
-    event = "VeryLazy",
+    event = "BufReadPost",
     config = function()
       require("ranger-nvim").setup { replace_netrw = true, enable_cmds = true }
-      vim.api.nvim_set_keymap("n", "<leader>ef", "", {
-        noremap = true,
-        callback = function()
-          require("ranger-nvim").open(true)
-        end,
-      })
     end,
   },
   {
@@ -421,29 +267,13 @@ local plugins = {
       "SessionLoadFromFile",
       "SessionDelete",
     },
-    config = function()
-      require("persisted").setup {
-        save_dir = vim.fn.expand(vim.fn.stdpath "data" .. "/sessions/"), -- directory where session files are saved
-        silent = false, -- silent nvim message when sourcing session file
-        use_git_branch = true, -- create session files based on the branch of the git enabled repository
-        autosave = true, -- automatically save session files when exiting Neovim
-        should_autosave = function()
-          if vim.bo.filetype == "alpha" then
-            return false
-          end
-          return true
-        end, -- function to determine if a session should be autosaved
-        -- Set `lazy = false` in `plugins/editor.lua` to enable this
-        autoload = false, -- automatically load the session for the cwd on Neovim startup
-        on_autoload_no_session = nil, -- function to run when `autoload = true` but there is no session to load
-        follow_cwd = true, -- change session file name to match current working directory if it changes
-        allowed_dirs = nil, -- table of dirs that the plugin will auto-save and auto-load from
-        ignored_dirs = nil, -- table of dirs that are ignored when auto-saving and auto-loading
-        telescope = { -- options for the telescope extension
-          reset_prompt_after_deletion = true, -- whether to reset prompt after session deleted
-        },
-      }
-    end,
+    event = "VeryLazy",
+    config = require "custom.configs.persisted",
+  },
+  {
+    "mg979/vim-visual-multi",
+    event = "BufReadPost",
+    branch = "master",
   },
 }
 
