@@ -54,6 +54,7 @@ local plugins = {
       { "nvim-telescope/telescope-live-grep-args.nvim" },
       {
         "jvgrootveld/telescope-zoxide",
+        "debugloop/telescope-undo.nvim",
       },
     },
     opts = overrides.telescope,

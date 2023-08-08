@@ -77,6 +77,7 @@ M.telescope = {
     "frecency",
     "aerial",
     "zoxide",
+    "undo",
   },
 }
 
