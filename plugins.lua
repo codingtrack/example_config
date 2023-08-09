@@ -70,13 +70,13 @@ local plugins = {
 
   -- Install a plugin
   -- format & linting
-  {
-    "jose-elias-alvarez/null-ls.nvim",
-    event = { "CursorHold", "CursorHoldI" },
-    config = function()
-      require "custom.configs.null-ls"
-    end,
-  },
+  -- {
+  --   "jose-elias-alvarez/null-ls.nvim",
+  --   event = { "CursorHold", "CursorHoldI" },
+  --   config = function()
+  --     require "custom.configs.null-ls"
+  --   end,
+  -- },
   {
     "ahmedkhalf/project.nvim",
     event = "VimEnter",
@@ -276,6 +276,11 @@ local plugins = {
     "mg979/vim-visual-multi",
     event = "BufReadPost",
     branch = "master",
+  },
+  {
+    "nvimdev/guard.nvim",
+    event = { "CursorHold", "CursorHoldI" },
+    config = require "custom.configs.guard",
   },
 }
 
