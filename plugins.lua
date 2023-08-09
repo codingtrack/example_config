@@ -84,6 +84,7 @@ local plugins = {
       require("project_nvim").setup {
         detection_methods = { "pattern" },
         patterns = { ".git", ".svn", ".clang-format", "package.json", ".hgtags" },
+        ignore_lsp = { "null-ls", "copilot" },
       }
     end,
   },

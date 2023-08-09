@@ -68,6 +68,17 @@ M.telescope = {
       case_mode = "smart_case", -- or "ignore_case" or "respect_case"
       -- the default case_mode is "smart_case"
     },
+    frecency = {
+      show_scores = true,
+      show_unindexed = true,
+      ignore_patterns = { "*.git/*", "*/tmp/*" },
+    },
+    live_grep_args = {
+      auto_quoting = true, -- enable/disable auto-quoting
+    },
+    undo = {
+      side_by_side = true,
+    },
   },
   extensions_list = {
     "themes",
