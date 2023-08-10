@@ -5,6 +5,12 @@ autocmd("VimResized", {
   pattern = "*",
   command = "tabdo wincmd =",
 })
+
+autocmd({ "VimLeave" }, {
+  callback = function()
+    vim.cmd "sleep 1m"
+  end,
+})
 --
 -- triggers CursorHold event faster
 vim.opt.shiftwidth = 4
