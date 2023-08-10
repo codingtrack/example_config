@@ -286,6 +286,11 @@ local plugins = {
     "ojroques/nvim-bufdel",
     event = "BufReadPost",
   },
+  {
+    "lewis6991/satellite.nvim",
+    event = "BufRead",
+    config = require "custom.configs.satellite",
+  },
 }
 
 return plugins
