@@ -135,18 +135,8 @@ M.markdown = {
 
 M.tabufline = {
   n = {
-    ["<leader>xc"] = {
-      function()
-        require("nvchad_ui.tabufline").close_buffer()
-      end,
-      "Close current buffer",
-    },
-    ["<leader>xa"] = {
-      function()
-        require("nvchad_ui.tabufline").closeOtherBufs()
-      end,
-      "Close other buffer",
-    },
+    ["<leader>xc"] = { "<cmd>BufDel<CR>", "Close current buffer" },
+    ["<leader>xa"] = { "<cmd>BufDelOthers<CR>", "Close other buffer" },
   },
 }
 

@@ -282,6 +282,10 @@ local plugins = {
     event = { "CursorHold", "CursorHoldI" },
     config = require "custom.configs.guard",
   },
+  {
+    "ojroques/nvim-bufdel",
+    event = "BufReadPost",
+  },
 }
 
 return plugins
