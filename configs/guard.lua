@@ -2,8 +2,8 @@ return function()
   local ft = require "guard.filetype"
 
   -- use clang-format and clang-tidy for c files
-  ft("c"):fmt("clang-format"):lint "clang-tidy"
-  ft("cpp"):fmt("clang-format"):lint "clang-tidy"
+  ft("c"):fmt("clang-format")
+  ft("cpp"):fmt("clang-format")
 
   -- use stylua to format lua files and no linter
   ft("lua"):fmt "stylua"
