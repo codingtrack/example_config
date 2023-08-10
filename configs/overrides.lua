@@ -20,6 +20,7 @@ M.treesitter = {
     --   "python"
     -- },
   },
+  matchup = { enable = true },
 }
 
 M.mason = {
@@ -93,13 +94,36 @@ M.telescope = {
 }
 
 M.gitsigns = {
+  watch_gitdir = { interval = 1000, follow_files = true },
   current_line_blame = true,
+  current_line_blame_opts = { delay = 1000, virtual_text_pos = "eol" },
+  sign_priority = 6,
+  update_debounce = 100,
+  status_formatter = nil, -- Use default
+  word_diff = false,
+  diff_opts = { internal = true },
 }
 
 M.blankline = {
   show_trailing_blankline_indent = true,
   show_first_indent_level = true,
   space_char_blankline = " ",
+  context_patterns = {
+    "^if",
+    "^table",
+    "block",
+    "class",
+    "for",
+    "function",
+    "if_statement",
+    "import",
+    "list_literal",
+    "method",
+    "selector",
+    "type",
+    "var",
+    "while",
+  },
   -- use_treesitter = true,
 }
 

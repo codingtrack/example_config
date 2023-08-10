@@ -175,9 +175,7 @@ local plugins = {
   {
     "karb94/neoscroll.nvim",
     event = { "VeryLazy" },
-    config = function()
-      require("neoscroll").setup()
-    end,
+    config = require "custom.configs.neoscroll",
   },
   {
     "iamcco/markdown-preview.nvim",
@@ -244,18 +242,7 @@ local plugins = {
   {
     "RRethy/vim-illuminate",
     event = "BufReadPost",
-    config = function()
-      require("illuminate").configure {
-        filetypes_denylist = {
-          "dirvish",
-          "lazy",
-          "neogitstatus",
-          "spectre_panel",
-          "DressingSelect",
-          "TelescopePrompt",
-        },
-      }
-    end,
+    config = require "custom.configs.illuminate",
   },
   {
     "olimorris/persisted.nvim",
@@ -290,6 +277,17 @@ local plugins = {
     "lewis6991/satellite.nvim",
     event = "BufRead",
     config = require "custom.configs.satellite",
+  },
+  {
+    "j-hui/fidget.nvim",
+    tag = "legacy",
+    event = "LspAttach",
+    opts = {
+      -- options
+      fmt = {
+        max_messages = 3, -- The maximum number of messages stacked at any give time
+      },
+    },
   },
 }
 
