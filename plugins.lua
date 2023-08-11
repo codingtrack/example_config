@@ -273,11 +273,6 @@ local plugins = {
     "ojroques/nvim-bufdel",
     event = "BufReadPost",
   },
-  -- {
-  --   "lewis6991/satellite.nvim",
-  --   event = "BufRead",
-  --   config = require "custom.configs.satellite",
-  -- },
   {
     "j-hui/fidget.nvim",
     tag = "legacy",
@@ -288,6 +283,13 @@ local plugins = {
         max_messages = 3, -- The maximum number of messages stacked at any give time
       },
     },
+  },
+  {
+    "nmac427/guess-indent.nvim",
+    event = { "InsertEnter" },
+    config = function()
+      require("guess-indent").setup {}
+    end,
   },
 }
 
