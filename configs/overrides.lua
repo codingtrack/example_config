@@ -40,8 +40,9 @@ M.mason = {
     "prettier",
     "shfmt",
     "stylua",
-    "gofumpt",
+    "golines",
     "clang-format",
+    "black"
   },
 }
 
