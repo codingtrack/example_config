@@ -180,4 +180,10 @@ M.persisted = {
   },
 }
 
+M.gitsigns = {
+  n = {
+    ["<leader>td"] = { "<cmd>Gitsigns toggle_word_diff<CR>", "Gitsigns toggle_word_diff" },
+  },
+}
+
 return M

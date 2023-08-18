@@ -42,7 +42,7 @@ M.mason = {
     "stylua",
     "golines",
     "clang-format",
-    "black"
+    "black",
   },
 }
 
@@ -59,6 +59,10 @@ M.nvimtree = {
       },
     },
   },
+  update_focused_file = {
+    update_root = true,
+  },
+
 }
 
 M.telescope = {
@@ -95,13 +99,43 @@ M.telescope = {
 }
 
 M.gitsigns = {
+  signs = {
+    add = {
+      hl = "GitSignsAdd",
+      numhl = "GitSignsAddNr",
+      linehl = "GitSignsAddLn",
+    },
+    change = {
+      hl = "GitSignsChange",
+      numhl = "GitSignsChangeNr",
+      linehl = "GitSignsChangeLn",
+    },
+    delete = {
+      hl = "GitSignsDelete",
+      numhl = "GitSignsDeleteNr",
+      linehl = "GitSignsDeleteLn",
+    },
+    topdelete = {
+      hl = "GitSignsDelete",
+      numhl = "GitSignsDeleteNr",
+      linehl = "GitSignsDeleteLn",
+    },
+    changedelete = {
+      hl = "GitSignsChange",
+      numhl = "GitSignsChangeNr",
+      linehl = "GitSignsChangeLn",
+    },
+  },
+  numhl = false, -- Toggle with `:Gitsigns toggle_numhl`
+  linehl = false, -- Toggle with `:Gitsigns toggle_linehl`
+  word_diff = false, -- Toggle with `:Gitsigns toggle_word_diff`
+  attach_to_untracked = true,
   watch_gitdir = { interval = 1000, follow_files = true },
   current_line_blame = true,
-  current_line_blame_opts = { delay = 1000, virtual_text_pos = "eol" },
+  current_line_blame_opts = { virt_text = true, delay = 1000, virt_text_pos = "eol" },
   sign_priority = 6,
   update_debounce = 100,
   status_formatter = nil, -- Use default
-  word_diff = false,
   diff_opts = { internal = true },
 }
 
