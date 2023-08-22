@@ -94,7 +94,10 @@ M.lspconfig = {
       "Floating diagnostic",
     },
     ["<leader>ca"] = { "<cmd>CodeActionMenu<CR>", "LSP code action" },
-    ["<leader>fm"] = { "<cmd>GuardFmt<CR>", "LSP formating" },
+    ["<leader>fm"] = { "<cmd>Neoformat<CR>", "LSP formating" },
+  },
+  v = {
+    ["<leader>fm"] = { "<cmd>Neoformat<CR>", "LSP formating" },
   },
 }
 

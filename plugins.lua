@@ -264,11 +264,11 @@ local plugins = {
     event = "BufReadPost",
     branch = "master",
   },
-  {
-    "nvimdev/guard.nvim",
-    event = { "CursorHold", "CursorHoldI" },
-    config = require "custom.configs.guard",
-  },
+  -- {
+  --   "nvimdev/guard.nvim",
+  --   event = { "CursorHold", "CursorHoldI" },
+  --   config = require "custom.configs.guard",
+  -- },
   {
     "ojroques/nvim-bufdel",
     event = "BufReadPost",
@@ -290,6 +290,11 @@ local plugins = {
     config = function()
       require("guess-indent").setup {}
     end,
+  },
+  {
+    "sbdchd/neoformat",
+    event = { "BufReadPre" },
+    cmd = { "Neoformat" },
   },
 }
 
