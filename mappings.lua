@@ -94,10 +94,6 @@ M.lspconfig = {
       "Floating diagnostic",
     },
     ["<leader>ca"] = { "<cmd>CodeActionMenu<CR>", "LSP code action" },
-    ["<leader>fm"] = { "<cmd>Neoformat<CR>", "LSP formating" },
-  },
-  v = {
-    ["<leader>fm"] = { "<cmd>Neoformat<CR>", "LSP formating" },
   },
 }
 
@@ -186,6 +182,15 @@ M.persisted = {
 M.gitsigns = {
   n = {
     ["<leader>td"] = { "<cmd>Gitsigns toggle_word_diff<CR>", "Gitsigns toggle_word_diff" },
+  },
+}
+
+M.neoformat = {
+  n = {
+    ["<leader>fm"] = { "<cmd>Neoformat<CR>", "Formating" },
+  },
+  v = {
+    ["<leader>fm"] = { "<cmd>Neoformat<CR>", "Formating" },
   },
 }
 

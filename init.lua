@@ -43,6 +43,10 @@ if vim.fn.has "nvim-0.9" == 1 then
   vim.opt.diffopt:append "linematch:60" -- enable linematch diff algorithm
 end
 
+vim.g.neoformat_basic_format_align = 1
+vim.g.neoformat_basic_format_trim = 1
+vim.g.neoformat_basic_format_retab = 1
+
 -- autocmd({
 --   "WinScrolled", -- or WinResized on NVIM-v0.9 and higher
 --   "BufWinEnter",
