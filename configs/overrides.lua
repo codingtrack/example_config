@@ -31,10 +31,10 @@ M.mason = {
     "bash-language-server",
     "gopls",
     "marksman",
-    "jsonnet-language-server",
-    "neocmakelsp",
+    "json-lsp",
     "yaml-language-server",
-    "jedi-language-server",
+    "pyright",
+    "cmake-language-server",
 
     -- format
     "prettier",

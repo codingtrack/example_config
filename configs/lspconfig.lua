@@ -4,7 +4,7 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 local lspconfig = require "lspconfig"
 
 -- if you just want default config for the servers then put them in a table
-local servers = { "bashls", "gopls", "marksman", "yamlls", "pyright", "jsonls", "cmake" }
+local servers = { "bashls", "gopls", "marksman", "yamlls", "pyright", "cmake", "jsonls" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -48,27 +48,4 @@ lspconfig.clangd.setup {
     return lspconfig.util.root_pattern(unpack(root_files))(fname) or lspconfig.util.find_git_ancestor(fname)
   end,
   single_file_support = true,
-}
-
-lspconfig.jsonls.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  cmd = {
-    "jsonnet-language-server",
-  },
-}
-
-lspconfig.cmake.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  cmd = {
-    "neocmakelsp",
-    "--stdio",
-  },
-}
-
-lspconfig.pyright.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  cmd = { "jedi-language-server" },
 }
