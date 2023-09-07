@@ -21,9 +21,8 @@ local plugins = {
   },
   {
     "hiphish/rainbow-delimiters.nvim",
-    -- event = "VeryLazy",
+    event = "VeryLazy",
     config = function()
-      dofile(vim.g.base46_cache .. "rainbowdelimiters")
       require "custom.configs.rainbow_delimiters"
     end,
   },
@@ -143,7 +142,6 @@ local plugins = {
     lazy = true,
     cmd = { "HopWord", "HopLine" },
     config = function()
-      dofile(vim.g.base46_cache .. "hop")
       require("hop").setup()
     end,
   },
@@ -151,7 +149,6 @@ local plugins = {
     "folke/todo-comments.nvim",
     event = "BufReadPost",
     config = function()
-      dofile(vim.g.base46_cache .. "todo")
       require("todo-comments").setup {}
     end,
   },
@@ -201,9 +198,6 @@ local plugins = {
   {
     "weilbith/nvim-code-action-menu",
     cmd = "CodeActionMenu",
-    config = function()
-      dofile(vim.g.base46_cache .. "codeactionmenu")
-    end,
   },
   {
     "kylechui/nvim-surround",
