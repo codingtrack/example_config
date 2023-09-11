@@ -45,7 +45,7 @@ local plugins = {
     "nvim-telescope/telescope.nvim",
     branch = "master",
     dependencies = {
-      { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+      -- { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
       {
         "nvim-telescope/telescope-frecency.nvim",
         dependencies = { "kkharji/sqlite.lua" },

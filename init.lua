@@ -37,7 +37,7 @@ vim.opt.listchars = {
   extends = ">",
   precedes = "<",
 }
-vim.opt.relativenumber = true
+-- vim.opt.relativenumber = true
 
 if vim.fn.has "nvim-0.9" == 1 then
   vim.opt.diffopt:append "linematch:60" -- enable linematch diff algorithm
