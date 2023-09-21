@@ -21,7 +21,7 @@ local plugins = {
   },
   {
     "hiphish/rainbow-delimiters.nvim",
-    event = "VeryLazy",
+    -- event = "VeryLazy",
     config = function()
       require "custom.configs.rainbow_delimiters"
     end,
