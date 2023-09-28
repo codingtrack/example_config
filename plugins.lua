@@ -9,7 +9,7 @@ local plugins = {
     "neovim/nvim-lspconfig",
     event = { "CursorHold", "CursorHoldI" },
     config = function()
-      require("plugins.configs.lspconfig").defaults()
+      require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
     end, -- Override to setup mason-lspconfig
   },
