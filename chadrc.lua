@@ -12,7 +12,7 @@ M.ui = {
   hl_add = highlights.add,
   lsp_semantic_tokens = true, -- needs nvim v0.9, just adds highlight groups for lsp semantic tokens
   -- nvdash = { load_on_startup = true },
-  extended_integrations = { "notify" }, -- these aren't compiled by default, ex: "alpha", "notify"
+  extended_integrations = { "notify", 'todo', 'codeactionmenu', 'hop' }, -- these aren't compiled by default, ex: "alpha", "notify"
   statusline = {
     theme = "default", -- default/vscode/vscode_colored/minimal
   },

@@ -9,7 +9,7 @@ local plugins = {
     "neovim/nvim-lspconfig",
     event = { "CursorHold", "CursorHoldI" },
     config = function()
-      require "plugins.configs.lspconfig"
+      require("plugins.configs.lspconfig").defaults()
       require "custom.configs.lspconfig"
     end, -- Override to setup mason-lspconfig
   },
@@ -35,10 +35,6 @@ local plugins = {
   {
     "nvim-tree/nvim-tree.lua",
     opts = overrides.nvimtree,
-  },
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    opts = overrides.blankline,
   },
 
   {
@@ -67,18 +63,16 @@ local plugins = {
     dependencies = { "JoosepAlviste/nvim-ts-context-commentstring" },
   },
 
+  -- To make a plugin not be loaded
+  {
+    "NvChad/nvim-colorizer.lua",
+    enabled = false
+  },
+
   -- Install a plugin
-  -- format & linting
-  -- {
-  --   "jose-elias-alvarez/null-ls.nvim",
-  --   event = { "CursorHold", "CursorHoldI" },
-  --   config = function()
-  --     require "custom.configs.null-ls"
-  --   end,
-  -- },
   {
     "ahmedkhalf/project.nvim",
-    event = "VimEnter",
+    lazy = false,
     config = function()
       require("project_nvim").setup {
         detection_methods = { "pattern" },
@@ -140,8 +134,9 @@ local plugins = {
   {
     "phaazon/hop.nvim",
     lazy = true,
-    cmd = { "HopWord", "HopLine" },
+    cmd = { "HopWord", "HopLine", "HopPattern", "HopChar1CurrentLine" },
     config = function()
+      dofile(vim.g.base46_cache .. "hop")
       require("hop").setup()
     end,
   },
@@ -149,6 +144,7 @@ local plugins = {
     "folke/todo-comments.nvim",
     event = "BufReadPost",
     config = function()
+      dofile(vim.g.base46_cache .. "todo")
       require("todo-comments").setup {}
     end,
   },
@@ -198,6 +194,9 @@ local plugins = {
   {
     "weilbith/nvim-code-action-menu",
     cmd = "CodeActionMenu",
+    config = function()
+      dofile(vim.g.base46_cache .. "codeactionmenu")
+    end,
   },
   {
     "kylechui/nvim-surround",
@@ -263,11 +262,6 @@ local plugins = {
     event = "BufReadPost",
     branch = "master",
   },
-  -- {
-  --   "nvimdev/guard.nvim",
-  --   event = { "CursorHold", "CursorHoldI" },
-  --   config = require "custom.configs.guard",
-  -- },
   {
     "ojroques/nvim-bufdel",
     event = "BufReadPost",

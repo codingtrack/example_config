@@ -119,6 +119,8 @@ M.hop = {
   n = {
     ["<leader>hw"] = { "<cmd>HopWord<CR>", "HopWord" },
     ["<leader>hl"] = { "<cmd>HopLine<CR>", "HopLine" },
+    ["<leader>hc"] = { "<cmd>HopChar1CurrentLine<CR>", "HopChar1CurrentLine" },
+    ["<leader>hp"] = { "<cmd>HopPattern<CR>", "HopPattern" },
   },
 }
 

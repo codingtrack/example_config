@@ -139,27 +139,4 @@ M.gitsigns = {
   diff_opts = { internal = true },
 }
 
-M.blankline = {
-  show_trailing_blankline_indent = true,
-  show_first_indent_level = true,
-  space_char_blankline = " ",
-  context_patterns = {
-    "^if",
-    "^table",
-    "block",
-    "class",
-    "for",
-    "function",
-    "if_statement",
-    "import",
-    "list_literal",
-    "method",
-    "selector",
-    "type",
-    "var",
-    "while",
-  },
-  -- use_treesitter = true,
-}
-
 return M
