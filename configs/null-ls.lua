@@ -4,7 +4,9 @@ local btns = null_ls.builtins
 -- Please set additional flags for the supported servers here
 -- Don't specify any config here if you are using the default one.
 local sources = {
-  btns.formatting.clang_format,
+  btns.formatting.clang_format.with {
+    filetypes = { "c", "cpp" },
+  },
   btns.formatting.prettier.with {
     filetypes = {
       "vue",
@@ -18,6 +20,7 @@ local sources = {
       "scss",
       "sh",
       "markdown",
+      "json",
     },
   },
   btns.formatting.rustfmt,
