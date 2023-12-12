@@ -53,12 +53,12 @@ vim.g.neoformat_basic_format_align = 1
 vim.g.neoformat_basic_format_trim = 1
 vim.g.neoformat_basic_format_retab = 1
 
-autocmd("BufEnter", {
-  pattern = "*",
-  callback = function(bufnr)
-    vim.cmd "silent! :lcd%:p:h"
-  end,
-})
+-- autocmd("BufEnter", {
+--   pattern = "*",
+--   callback = function()
+--     vim.cmd "silent! :lcd%:p:h"
+--   end,
+-- })
 
 vim.g.VM_maps = { ["Find Under"] = "<C-p>" }
 

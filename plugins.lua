@@ -126,12 +126,12 @@ local plugins = {
       }
     end,
   },
-  {
-    "gelguy/wilder.nvim",
-    event = "CmdlineEnter",
-    dependencies = { "romgrk/fzy-lua-native" },
-    config = require "custom.configs.wilder",
-  },
+  -- {
+  --   "gelguy/wilder.nvim",
+  --   event = "CmdlineEnter",
+  --   dependencies = { "romgrk/fzy-lua-native" },
+  --   config = require "custom.configs.wilder",
+  -- },
   {
     "ethanholz/nvim-lastplace",
     event = "BufReadPost",

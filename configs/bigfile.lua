@@ -28,7 +28,7 @@ return function()
       "filetype",
       "matchparen",
       cmp,
-      wilder,
+      -- wilder,
     },
   }
 end
