@@ -240,7 +240,7 @@ local plugins = {
   {
     "utilyre/sentiment.nvim",
     version = "*",
-    keys = { "%" },
+    event = "BufReadPost",
     opts = {
       -- config
     },
@@ -324,6 +324,10 @@ local plugins = {
       },
       ring = { storage = "sqlite" },
     },
+  },
+  {
+    "dnlhc/glance.nvim",
+    event = "LspAttach",
   },
 }
 

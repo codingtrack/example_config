@@ -71,8 +71,8 @@ M.lazy = {
 
 M.lspconfig = {
   n = {
-    ["gd"] = { "<cmd>Telescope lsp_definitions<CR>", "Goto definition" },
-    ["gr"] = { "<cmd>Telescope lsp_references<CR>", "Goto reference" },
+    ["gd"] = { "<cmd>Glance definitions<CR>", "Goto definition" },
+    ["gr"] = { "<cmd>Glance references<CR>", "Goto reference" },
     ["<leader>ls"] = {
       function()
         local aerial_avail, _ = pcall(require, "aerial")
