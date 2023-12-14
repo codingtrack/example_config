@@ -43,9 +43,7 @@ M.treesitter = {
     end,
     additional_vim_regex_highlighting = false,
   },
-  indent = {
-    enable = false,
-  },
+  indent = { enable = true },
 }
 
 M.mason = {
@@ -68,6 +66,16 @@ M.mason = {
     "gofumpt",
     "clang-format",
     "black",
+  },
+}
+
+M.cmp = {
+  matching = {
+    disallow_partial_fuzzy_matching = false,
+  },
+  performance = {
+    async_budget = 1,
+    max_view_entries = 120,
   },
 }
 

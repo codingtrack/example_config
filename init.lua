@@ -6,11 +6,11 @@ autocmd("VimResized", {
   command = "tabdo wincmd =",
 })
 
-autocmd({ "VimLeave" }, {
-  callback = function()
-    vim.cmd "sleep 1m"
-  end,
-})
+-- autocmd({ "VimLeave" }, {
+--   callback = function()
+--     vim.cmd "sleep 1m"
+--   end,
+-- })
 
 -- triggers CursorHold event faster
 vim.opt.autoread = true
@@ -61,6 +61,17 @@ vim.g.neoformat_basic_format_retab = 1
 -- })
 
 vim.g.VM_maps = { ["Find Under"] = "<C-p>" }
+
+
+
+-- Do not use builtin matchit.vim and matchparen.vim because we're using vim-matchup
+vim.g.loaded_matchit = 1
+vim.g.loaded_matchparen = 1
+-- Disable menu loading
+vim.g.did_install_default_menus = 1
+vim.g.did_install_syntax_menu = 1.0
+
+
 
 if vim.g.neovide then
   -- Put anything you want to happen only in Neovide here

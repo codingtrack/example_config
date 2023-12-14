@@ -6,6 +6,7 @@ local plugins = {
   -- Override plugin definition options
 
   {
+    -- override plugin configs
     "neovim/nvim-lspconfig",
     dependencies = {
       {
@@ -17,14 +18,24 @@ local plugins = {
           require "custom.configs.null-ls"
         end,
       },
+      {
+        "ray-x/lsp_signature.nvim",
+        opts = require "custom.configs.lsp_signature",
+        config = function(_, opts)
+          require("lsp_signature").setup(opts)
+        end,
+      },
     },
     config = function()
       require("plugins.configs.lspconfig").defaults()
       require "custom.configs.lspconfig"
     end, -- Override to setup mason-lspconfig
   },
+  {
+    "hrsh7th/nvim-cmp",
+    opts = overrides.cmp,
+  },
 
-  -- override plugin configs
   {
     "williamboman/mason.nvim",
     opts = overrides.mason,
@@ -47,6 +58,10 @@ local plugins = {
           require "custom.configs.rainbow_delimiters"
         end,
       },
+      {
+        "abecodes/tabout.nvim",
+        config = require "custom.configs.tabout",
+      },
     },
     opts = overrides.treesitter,
   },
@@ -63,11 +78,20 @@ local plugins = {
       { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
       {
         "nvim-telescope/telescope-frecency.nvim",
-      },
-      { "nvim-telescope/telescope-live-grep-args.nvim" },
-      {
         "jvgrootveld/telescope-zoxide",
+        "nvim-telescope/telescope-live-grep-args.nvim",
         "debugloop/telescope-undo.nvim",
+      },
+      {
+        "ahmedkhalf/project.nvim",
+        event = { "CursorHold", "CursorHoldI" },
+        config = function()
+          require("project_nvim").setup {
+            detection_methods = { "pattern" },
+            patterns = { ".git", ".svn", ".clang-format", "package.json", ".hgtags" },
+            ignore_lsp = { "null-ls", "copilot" },
+          }
+        end,
       },
     },
     opts = overrides.telescope,
@@ -89,17 +113,6 @@ local plugins = {
 
   -- Install a plugin
   {
-    "ahmedkhalf/project.nvim",
-    lazy = false,
-    config = function()
-      require("project_nvim").setup {
-        detection_methods = { "pattern" },
-        patterns = { ".git", ".svn", ".clang-format", "package.json", ".hgtags" },
-        ignore_lsp = { "null-ls", "copilot" },
-      }
-    end,
-  },
-  {
     "max397574/better-escape.nvim",
     event = "InsertEnter",
     config = function()
@@ -108,6 +121,7 @@ local plugins = {
   },
   {
     "NeogitOrg/neogit",
+    branch = "nightly",
     cmd = { "Neogit" },
     dependencies = {
       "sindrets/diffview.nvim",
@@ -243,11 +257,6 @@ local plugins = {
     end,
   },
   {
-    "abecodes/tabout.nvim",
-    event = { "InsertEnter" },
-    config = require "custom.configs.tabout",
-  },
-  {
     "kelly-lin/ranger.nvim",
     -- event = "VeryLazy",
     cmd = { "Ranger" },
@@ -285,34 +294,14 @@ local plugins = {
   },
   {
     "j-hui/fidget.nvim",
-    tag = "legacy",
     event = "LspAttach",
-    opts = {
-      -- options
-      fmt = {
-        max_messages = 3, -- The maximum number of messages stacked at any give time
-      },
-    },
-  },
-  {
-    "vidocqh/data-viewer.nvim",
-    cmd = "DataViewer",
-    opts = {},
-    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = require "custom.configs.fidget",
   },
   {
     "nvimdev/hlsearch.nvim",
     event = "BufReadPost",
     config = function()
       require("hlsearch").setup()
-    end,
-  },
-  {
-    "ray-x/lsp_signature.nvim",
-    event = "LspAttach",
-    opts = require "custom.configs.lsp_signature",
-    config = function(_, opts)
-      require("lsp_signature").setup(opts)
     end,
   },
   {
