@@ -226,8 +226,11 @@ local plugins = {
     cmd = { "SudaRead", "SudaWrite" },
   },
   {
-    "weilbith/nvim-code-action-menu",
-    cmd = "CodeActionMenu",
+    "aznhe21/actions-preview.nvim",
+    event = { "LspAttach" },
+    config = function()
+      require("actions-preview").setup {}
+    end,
   },
   {
     "kylechui/nvim-surround",

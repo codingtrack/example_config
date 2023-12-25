@@ -94,7 +94,11 @@ M.lspconfig = {
       end,
       "Floating diagnostic",
     },
-    ["<leader>ca"] = { "<cmd>CodeActionMenu<CR>", "LSP code action" },
+    ["<leader>ca"] = {
+        function()
+            require('actions-preview').code_actions()
+        end,
+        "LSP code action" },
   },
 }
 
