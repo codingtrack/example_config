@@ -228,9 +228,7 @@ local plugins = {
   {
     "aznhe21/actions-preview.nvim",
     event = { "LspAttach" },
-    config = function()
-      require("actions-preview").setup {}
-    end,
+    config = require "custom.configs.actions_preview",
   },
   {
     "kylechui/nvim-surround",
