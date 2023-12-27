@@ -15,7 +15,7 @@ M.disabled = {
 M.general = {
   n = {
     [";"] = { ":", "Enter Command Mode", opts = { nowait = true } },
-    -- ["q"] = { "<cmd>q<CR>", "Quit" },
+    ["q"] = { "<cmd>q<CR>", "Quit" },
     ["<leader>u"] = { "<cmd>NvChadUpdate<CR>", "NvChadUpdate" },
   },
 }
@@ -38,7 +38,7 @@ M.telescope = {
       end,
       "Find files",
     },
-    ["<leader>fc"] = { "<cmd>Telescope registers<CR>", "Find registers" },
+    ["<leader>fc"] = { "<cmd>Telescope current_buffer_fuzzy_find<CR>", "Current buffer search" },
     ["<leader>fu"] = { "<cmd>Telescope undo<CR>", "Find undo" },
     -- git
     ["<leader>gb"] = { "<cmd>Telescope git_branches<CR>", "Git branches" },

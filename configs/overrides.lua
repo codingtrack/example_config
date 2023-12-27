@@ -77,6 +77,14 @@ M.cmp = {
     async_budget = 1,
     max_view_entries = 120,
   },
+  sorting = {
+    priority_weight = 2,
+  },
+  experimental = {
+    ghost_text = {
+      hl_group = "Whitespace",
+    },
+  },
 }
 
 -- git support in nvimtree
