@@ -48,11 +48,11 @@ lspconfig.clangd.setup {
     "--completion-style=detailed",
     "--header-insertion-decorators",
     "--header-insertion=never",
-    "--malloc-trim",
+    -- "--malloc-trim",
     "--pch-storage=memory",
     "--limit-references=3000",
     "--limit-results=350",
-    "-j=8",
+    "-j=2",
   },
   root_dir = function(fname)
     ---@diagnostic disable-next-line: deprecated
