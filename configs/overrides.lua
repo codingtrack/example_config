@@ -80,11 +80,6 @@ M.cmp = {
   sorting = {
     priority_weight = 2,
   },
-  experimental = {
-    ghost_text = {
-      hl_group = "Whitespace",
-    },
-  },
 }
 
 -- git support in nvimtree
