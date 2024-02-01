@@ -129,6 +129,12 @@ local plugins = {
       config = function()
         require("diffview").setup {
           enhanced_diff_hl = true,
+          hooks = {
+            diff_buf_read = function()
+              -- Change local options in diff buffers
+              vim.opt_local.wrap = true
+            end,
+          },
         }
       end,
     },

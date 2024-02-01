@@ -50,6 +50,8 @@ M.override = {
 ---@type HLTable
 M.add = {
   NvimTreeOpenedFolderName = { fg = "green", bold = true },
+  Winbar = { bg = "NONE" },
+  WinBarNC = { bg = "NONE" },
 }
 
 return M
