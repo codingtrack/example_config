@@ -51,7 +51,7 @@ M.override = {
 M.add = {
   NvimTreeOpenedFolderName = { fg = "green", bold = true },
   Winbar = { bg = "NONE" },
-  WinBarNC = { bg = "NONE" },
+  WinBarNC = { fg = "NONE", bg = "NONE" },
 }
 
 return M
