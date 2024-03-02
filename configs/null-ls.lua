@@ -23,7 +23,6 @@ local sources = {
       "json",
     },
   },
-  btns.formatting.rustfmt,
   btns.formatting.stylua,
   btns.formatting.shfmt,
   btns.formatting.gofumpt,
