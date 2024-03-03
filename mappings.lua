@@ -1,60 +1,53 @@
----@type MappingsTable
-local M = {}
-local map = vim.keymap.set
-
-map("n", "<C-c>", "")
-map("n", "<leader>cm", "")
-map("n", "<leader>f", "")
-map("n", "<leader>x", "")
-map("n", "<leader>ma", "")
-map("n", "<leader>h", function() end, { desc = "" })
-
+vim.keymap.del("n", "<C-c>")
+vim.keymap.del("n", "<leader>cm")
+vim.keymap.del("n", "<leader>x")
+vim.keymap.del("n", "<leader>h")
 -- general
-map("n", "<C-h>", "<C-w>h", { desc = "Switch Window left" })
-map("n", "q", "<cmd>q<CR>", { desc = "Quit" })
-map("n", "<leader>u", "<cmd>NvChadUpdate<CR>", { desc = "NvChadUpdate" })
+vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Switch Window left" })
+vim.keymap.set("n", "q", "<cmd>q<CR>", { desc = "Quit" })
+vim.keymap.set("n", "<leader>u", "<cmd>NvChadUpdate<CR>", { desc = "NvChadUpdate" })
 
 -- telescope
-map("n", "<leader>fp", "<cmd>Telescope projects<CR>", { desc = "Find projects" })
-map("n", "<leader>fs", "<cmd>Telescope grep_string<CR>", { desc = "Find word" })
-map("n", "<leader>fr", function()
+vim.keymap.set("n", "<leader>fp", "<cmd>Telescope projects<CR>", { desc = "Find projects" })
+vim.keymap.set("n", "<leader>fs", "<cmd>Telescope grep_string<CR>", { desc = "Find word" })
+vim.keymap.set("n", "<leader>fr", function()
     require("telescope").extensions.frecency.frecency {}
 end, { desc = "Find frecency" })
-map(
+vim.keymap.set(
     "n",
     "<leader>fw",
     "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
     { desc = "Live grep" }
 )
-map("n", "<leader>fz", "<cmd>Telescope zoxide list<CR>", { desc = "Zoxide list" })
-map("n", "<leader>ff", function()
+vim.keymap.set("n", "<leader>fz", "<cmd>Telescope zoxide list<CR>", { desc = "Zoxide list" })
+vim.keymap.set("n", "<leader>ff", function()
     require("custom.configs.telescope").find_project_files { previewer = false }
 end, { desc = "Find files" })
-map("n", "<leader>fc", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "Current buffer search" })
-map("n", "<leader>fu", "<cmd>Telescope undo<CR>", { desc = "Undo list" })
+vim.keymap.set("n", "<leader>fc", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "Current buffer search" })
+vim.keymap.set("n", "<leader>fu", "<cmd>Telescope undo<CR>", { desc = "Undo list" })
 -- git
-map("n", "<leader>gb", "<cmd>Telescope git_branches<CR>", { desc = "Git branches" })
-map("n", "<leader>gm", "<cmd>Telescope git_commits<CR>", { desc = "Git commits" })
-map("n", "<leader>tm", "<cmd>Telescope marks<CR>", { desc = "Find bookmarks" })
-map("n", "<leader>sh", "<cmd>Telescope search_history<CR>", { desc = "Search History" })
-
+vim.keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<CR>", { desc = "Git branches" })
+vim.keymap.set("n", "<leader>gm", "<cmd>Telescope git_commits<CR>", { desc = "Git commits" })
+vim.keymap.set("n", "<leader>tm", "<cmd>Telescope marks<CR>", { desc = "Find bookmarks" })
+vim.keymap.set("n", "<leader>sh", "<cmd>Telescope search_history<CR>", { desc = "Search History" })
+--
 -- Neogit
-map("n", "<leader>gg", "<cmd>Neogit<CR>", { desc = "Neogit" })
-
+vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<CR>", { desc = "Neogit" })
+--
 -- diffview
-map("n", "<leader>do", "<cmd>DiffviewOpen<CR>", { desc = "DiffviewOpen" })
-map("n", "<leader>dc", "<cmd>DiffviewClose<CR>", { desc = "DiffviewClose" })
-map("n", "<leader>df", "<cmd>DiffviewFileHistory<CR>", { desc = "DiffviewFileHistory" })
-
+vim.keymap.set("n", "<leader>do", "<cmd>DiffviewOpen<CR>", { desc = "DiffviewOpen" })
+vim.keymap.set("n", "<leader>dc", "<cmd>DiffviewClose<CR>", { desc = "DiffviewClose" })
+vim.keymap.set("n", "<leader>df", "<cmd>DiffviewFileHistory<CR>", { desc = "DiffviewFileHistory" })
+--
 -- lazy
-map("n", "<leader>ps", "<cmd>Lazy sync<CR>", { desc = "Lazy sync" })
-map("n", "<leader>pi", "<cmd>Lazy<CR>", { desc = "Lazy info" })
-map("n", "<leader>pc", "<cmd>Lazy check<CR>", { desc = "Lazy check" })
-
+vim.keymap.set("n", "<leader>ps", "<cmd>Lazy sync<CR>", { desc = "Lazy sync" })
+vim.keymap.set("n", "<leader>pi", "<cmd>Lazy<CR>", { desc = "Lazy info" })
+vim.keymap.set("n", "<leader>pc", "<cmd>Lazy check<CR>", { desc = "Lazy check" })
+--
 -- lspconfig
-map("n", "gd", "<cmd>Glance definitions<CR>", { desc = "Goto definitions" })
-map("n", "gr", "<cmd>Glance references<CR>", { desc = "Goto references" })
-map("n", "<leader>ls", function()
+vim.keymap.set("n", "gd", "<cmd>Glance definitions<CR>", { desc = "Goto definitions" })
+vim.keymap.set("n", "gr", "<cmd>Glance references<CR>", { desc = "Goto references" })
+vim.keymap.set("n", "<leader>ls", function()
     local aerial_avail, _ = pcall(require, "aerial")
     if aerial_avail then
         require("telescope").extensions.aerial.aerial()
@@ -62,73 +55,76 @@ map("n", "<leader>ls", function()
         require("telescope.builtin").lsp_document_symbols()
     end
 end, { desc = "Document symbols" })
-map("n", "<leader>lS", "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>", { desc = "Workspace symbols" })
-map("n", "<leader>li", "<cmd>LspInfo<CR>", { desc = "LspInfo" })
-map("n", "<leader>ld", "<cmd>Telescope diagnostics<CR>", { desc = "Diagnostics" })
-map("n", "<leader>lf", function()
+vim.keymap.set("n", "<leader>lS", "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>", { desc = "Workspace symbols" })
+vim.keymap.set("n", "<leader>li", "<cmd>LspInfo<CR>", { desc = "LspInfo" })
+vim.keymap.set("n", "<leader>ld", "<cmd>Telescope diagnostics<CR>", { desc = "Diagnostics" })
+vim.keymap.set("n", "<leader>lf", function()
     vim.diagnostic.open_float { border = "rounded" }
 end, { desc = "Floating diagnostic" })
-map("n", "<leader>ca", function()
+vim.keymap.set("n", "<leader>ca", function()
     require("actions-preview").code_actions()
 end, { desc = "LSP code action" })
 
 -- spectre
-map("n", "<leader>ss", "<cmd>lua require('spectre').open()<CR>", { desc = "Open spectre" })
-map(
+vim.keymap.set("n", "<leader>ss", "<cmd>lua require('spectre').open()<CR>", { desc = "Open spectre" })
+vim.keymap.set(
     "n",
     "<leader>sw",
     "<cmd>lua require('spectre').open_visual({select_word=true})<CR>",
     { desc = "Search current word" }
 )
-map(
+vim.keymap.set(
     "n",
     "<leader>sp",
     "<cmd>lua require('spectre').open_file_search({select_word=true})<CR>",
     { desc = "Search on current file" }
 )
-map("v", "<leader>sw", "<cmd>lua require('spectre').open_visual()<CR>", { desc = "Search current word" })
-map("v", "<leader>sp", "<cmd>lua require('spectre').open_file_search()<CR>", { desc = "Search on current file" })
-
+vim.keymap.set("v", "<leader>sw", "<cmd>lua require('spectre').open_visual()<CR>", { desc = "Search current word" })
+vim.keymap.set(
+    "v",
+    "<leader>sp",
+    "<cmd>lua require('spectre').open_file_search()<CR>",
+    { desc = "Search on current file" }
+)
+--
 -- hop
-map("n", "<leader>hw", "<cmd>HopWord<CR>", { desc = "HopWord" })
-map("n", "<leader>hl", "<cmd>HopLine<CR>", { desc = "HopLine" })
-map("n", "<leader>hc", "<cmd>HopChar1CurrentLine<CR>", { desc = "HopChar1CurrentLine" })
-map("n", "<leader>hp", "<cmd>HopPattern<CR>", { desc = "HopPattern" })
+vim.keymap.set("n", "<leader>hw", "<cmd>HopWord<CR>", { desc = "HopWord" })
+vim.keymap.set("n", "<leader>hl", "<cmd>HopLine<CR>", { desc = "HopLine" })
+vim.keymap.set("n", "<leader>hc", "<cmd>HopChar1CurrentLine<CR>", { desc = "HopChar1CurrentLine" })
+vim.keymap.set("n", "<leader>hp", "<cmd>HopPattern<CR>", { desc = "HopPattern" })
 
 -- easyalign
-map("n", "<leader>ga", "<cmd>EasyAlign<CR>", { desc = "EasyAlign" })
-map("v", "<leader>ga", "<cmd>EasyAlign<CR>", { desc = "EasyAlign" })
+vim.keymap.set("n", "<leader>ga", "<cmd>EasyAlign<CR>", { desc = "EasyAlign" })
+vim.keymap.set("v", "<leader>ga", "<cmd>EasyAlign<CR>", { desc = "EasyAlign" })
 
 -- markdown
-map("n", "<leader>md", "<cmd>MarkdownPreviewToggle<CR>", { desc = "MarkdownPreviewToggle" })
+vim.keymap.set("n", "<leader>md", "<cmd>MarkdownPreviewToggle<CR>", { desc = "MarkdownPreviewToggle" })
 
 -- tabufline
-map("n", "<leader>xc", "<cmd>BufDel<CR>", { desc = "Close current buffer" })
-map("n", "<leader>xa", "<cmd>BufDelOthers<CR>", { desc = "Close other buffers" })
+vim.keymap.set("n", "<leader>xc", "<cmd>BufDel<CR>", { desc = "Close current buffer" })
+vim.keymap.set("n", "<leader>xa", "<cmd>BufDelOthers<CR>", { desc = "Close other buffers" })
 
 -- Aerial
-map("n", "<leader>lo", "<cmd>AerialToggle<CR>", { desc = "SymbolsOutline" })
+vim.keymap.set("n", "<leader>lo", "<cmd>AerialToggle<CR>", { desc = "SymbolsOutline" })
 
 -- mason
-map("n", "<leader>mm", "<cmd>Mason<CR>", { desc = "Mason" })
-map("n", "<leader>ma", "<cmd>MasonInstallAll<CR>", { desc = "MasonInstallAll" })
-map("n", "<leader>mu", "<cmd>MasonUpdata<CR>", { desc = "MasonUpdata" })
+vim.keymap.set("n", "<leader>mm", "<cmd>Mason<CR>", { desc = "Mason" })
+vim.keymap.set("n", "<leader>ma", "<cmd>MasonInstallAll<CR>", { desc = "MasonInstallAll" })
+vim.keymap.set("n", "<leader>mu", "<cmd>MasonUpdata<CR>", { desc = "MasonUpdata" })
 
 -- ranger
-map("n", "<leader>fe", "<cmd>Ranger<CR>", { desc = "Ranger" })
+vim.keymap.set("n", "<leader>fe", "<cmd>Ranger<CR>", { desc = "Ranger" })
 
 -- persisted
-map("n", "<leader>Ss", "<cmd>SessionSave<CR>", { desc = "SessionSave" })
-map("n", "<leader>Sr", "<cmd>SessionLoad<CR>", { desc = "SessionLoad" })
-map("n", "<leader>Sl", "<cmd>SessionLoadLast<CR>", { desc = "SessionLoadLast" })
-map("n", "<leader>Sd", "<cmd>SessionDelete<CR>", { desc = "SessionDelete" })
+vim.keymap.set("n", "<leader>Ss", "<cmd>SessionSave<CR>", { desc = "SessionSave" })
+vim.keymap.set("n", "<leader>Sr", "<cmd>SessionLoad<CR>", { desc = "SessionLoad" })
+vim.keymap.set("n", "<leader>Sl", "<cmd>SessionLoadLast<CR>", { desc = "SessionLoadLast" })
+vim.keymap.set("n", "<leader>Sd", "<cmd>SessionDelete<CR>", { desc = "SessionDelete" })
 
 -- todo
-map("n", "<leader>ft", "<cmd>TodoTelescope<CR>", { desc = "TodoTelescope" })
+vim.keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<CR>", { desc = "TodoTelescope" })
 
 -- yanky
-map("n", "<leader>fy", function()
+vim.keymap.set("n", "<leader>fy", function()
     require("telescope").extensions.yank_history.yank_history {}
 end, { desc = "Open Yank History" })
-
-return M

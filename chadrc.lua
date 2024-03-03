@@ -56,9 +56,6 @@ M.ui = {
 
 M.plugins = "custom.plugins"
 
--- check core.mappings for table structure
-M.mappings = require "custom.mappings"
-
 -- M.base46 = {
 --   integrations = {
 --     "semantic_tokens",
