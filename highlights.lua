@@ -6,52 +6,55 @@ local M = {}
 
 ---@type Base46HLGroupsList
 M.override = {
-  Comment = {
-    italic = true,
-  },
-  DiffAdd = {
-    bg = "#005f00",
-    fg = "NONE",
-  },
-  DiffAdded = {
-    bg = "#005f00",
-    fg = "NONE",
-  },
-  DiffText = {
-    bg = "#4C566A",
-    fg = "NONE",
-  },
-  DiffDelete = {
-    bg = "#5f0000",
-    fg = "NONE",
-  },
-  DiffRemoved = {
-    bg = "#5f0000",
-    fg = "NONE",
-  },
-  DiffChange = {
-    bg = "#4C566A",
-    fg = "NONE",
-  },
-  DiffModified = {
-    bg = "#4C566A",
-    fg = "NONE",
-  },
-  DiffChangeDelete = {
-    bg = "#5f0000",
-    fg = "NONE",
-  },
-  DiffNewFile = {
-    bg = "#005f00",
-    fg = "NONE",
-  },
+    Comment = {
+        italic = true,
+    },
+    DiffAdd = {
+        bg = "#005f00",
+        fg = "NONE",
+    },
+    DiffAdded = {
+        bg = "#005f00",
+        fg = "NONE",
+    },
+    DiffText = {
+        bg = "#4C566A",
+        fg = "NONE",
+    },
+    DiffDelete = {
+        bg = "#5f0000",
+        fg = "NONE",
+    },
+    DiffRemoved = {
+        bg = "#5f0000",
+        fg = "NONE",
+    },
+    DiffChange = {
+        bg = "#4C566A",
+        fg = "NONE",
+    },
+    DiffModified = {
+        bg = "#4C566A",
+        fg = "NONE",
+    },
+    DiffChangeDelete = {
+        bg = "#5f0000",
+        fg = "NONE",
+    },
+    DiffNewFile = {
+        bg = "#005f00",
+        fg = "NONE",
+    },
+    TelescopeSelection = {
+        fg = "#61afef",
+    },
 }
 
 ---@type HLTable
 M.add = {
-  NvimTreeOpenedFolderName = { fg = "green", bold = true },
-  Winbar = { bg = "NONE" },
-  WinBarNC = { fg = "NONE", bg = "NONE" },
+    NvimTreeOpenedFolderName = { fg = "green", bold = true },
+    Winbar = { bg = "NONE" },
+    WinBarNC = { fg = "NONE", bg = "NONE" },
 }
 
 return M
