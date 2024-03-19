@@ -179,6 +179,9 @@ M.gitsigns = {
   update_debounce = 100,
   status_formatter = nil, -- Use default
   diff_opts = { internal = true },
+  on_attach = function()
+  end,
+
 }
 
 M.indent_blankline = {

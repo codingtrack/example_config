@@ -2,14 +2,9 @@ dofile(vim.g.base46_cache .. "lsp")
 require "nvchad.lsp"
 local lspconfig = require "lspconfig"
 local map = vim.keymap.set
+local conf = require("nvconfig").ui.lsp
 
 local on_attach = function(client, bufnr)
-    local conf = require("nvconfig").ui.lsp
-
-    -- semanticTokens
-    if not conf.semantic_tokens and client.supports_method "textDocument/semanticTokens" then
-        client.server_capabilities.semanticTokensProvider = nil
-    end
 
     if conf.signature and client.server_capabilities.signatureHelpProvider then
         require("nvchad.signature").setup(client, bufnr)
@@ -31,6 +26,13 @@ local on_attach = function(client, bufnr)
         require "nvchad.renamer" ()
     end, opts "Lsp NvRenamer")
 end
+
+local on_init = function(client, _)
+  if not conf.semantic_tokens and client.supports_method "textDocument/semanticTokens" then
+    client.server_capabilities.semanticTokensProvider = nil
+  end
+end
+
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
@@ -58,6 +60,7 @@ for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
         on_attach = on_attach,
         capabilities = capabilities,
+        on_init = on_init,
         single_file_support = true,
     }
 end
@@ -86,6 +89,7 @@ end
 lspconfig.clangd.setup {
     on_attach = on_attach,
     capabilities = vim.tbl_deep_extend("keep", { offsetEncoding = { "utf-16", "utf-8" } }, capabilities),
+    on_init = on_init,
     cmd = {
         "clangd",
         "--clang-tidy",
@@ -112,6 +116,7 @@ lspconfig.clangd.setup {
 lspconfig.lua_ls.setup {
     on_attach = on_attach,
     capabilities = capabilities,
+    on_init = on_init,
 
     settings = {
       Lua = {
